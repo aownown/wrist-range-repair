@@ -1,0 +1,11 @@
+[
+  {
+    "source": "demo_78",
+    "affected_ROMs": [
+      "wrist7_tight",
+      "wrist7_medium",
+      "wrist7_mild"
+    ],
+    "reason": "normal full all9 qualification false; preserve NA, not new method failure"
+  }
+]

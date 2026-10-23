@@ -1,0 +1,97 @@
+{
+  "schema": "public_can_wrist_final_confirmation_v366",
+  "recorded_at_utc": "2026-10-08T10:19:45.063603+00:00",
+  "sources": [
+    "demo_173",
+    "demo_162",
+    "demo_188",
+    "demo_110",
+    "demo_170",
+    "demo_119",
+    "demo_120",
+    "demo_171",
+    "demo_126",
+    "demo_148",
+    "demo_147",
+    "demo_79"
+  ],
+  "ROMs": [
+    {
+      "capability_id": "wrist7_tight",
+      "family": "wrist",
+      "joint": "robot0_joint7",
+      "lower": 0.4,
+      "upper": 0.9
+    },
+    {
+      "capability_id": "wrist7_medium",
+      "family": "wrist",
+      "joint": "robot0_joint7",
+      "lower": 0.2,
+      "upper": 1.2
+    },
+    {
+      "capability_id": "wrist7_mild",
+      "family": "wrist",
+      "joint": "robot0_joint7",
+      "lower": -0.2,
+      "upper": 1.5
+    },
+    {
+      "capability_id": "wrist7_tight_to_medium_third1",
+      "family": "wrist",
+      "joint": "robot0_joint7",
+      "lower": 0.33333333333333337,
+      "upper": 1.0
+    },
+    {
+      "capability_id": "wrist7_tight_to_medium_third2",
+      "family": "wrist",
+      "joint": "robot0_joint7",
+      "lower": 0.2666666666666667,
+      "upper": 1.1
+    }
+  ],
+  "original_three_ROM_ids": [
+    "wrist7_tight",
+    "wrist7_medium",
+    "wrist7_mild"
+  ],
+  "interpolation_ROM_ids": [
+    "wrist7_tight_to_medium_third1",
+    "wrist7_tight_to_medium_third2"
+  ],
+  "nominal_conditions": 60,
+  "method_count": 14,
+  "methods": [
+    "source_copy",
+    "clip_common_fixedXYZ",
+    "clip_guard_only_fixedXYZ",
+    "nearest_teacher",
+    "nearest_teacher59_data_matched",
+    "fixedXYZ__old_weight_multistart",
+    "fixedXYZ__position_priority_multistart",
+    "fixedXYZ__free_orientation_multistart",
+    "nn_expanded_full_seed0_step05000",
+    "nn_expanded_full_seed1_step05000",
+    "nn_expanded_full_seed2_step05000",
+    "nn_expanded_constant_seed0_step05000",
+    "nn_expanded_constant_seed1_step05000",
+    "nn_expanded_constant_seed2_step05000"
+  ],
+  "selected_common_family": "expanded59_step05000",
+  "normal_failure_all_five_ROM_NA_no_replacement": true,
+  "initial_ROM_infeasible_NA_no_projection": true,
+  "restricted_candidate_selection_from_final_outcomes": false,
+  "training_updates_authorized": 0,
+  "final_outcome_tuning_authorized": false,
+  "private_full_normal_state_trace_and_private_FK_strong_information_assumption_disclosed": true,
+  "strict_goal": "original native task",
+  "strict_carry": "original20Hz before-and-after action carry window",
+  "strict_all9_physics_before_after_tolerance": 1e-09,
+  "original_horizon_primary_plus40_separate": true,
+  "all9_includes_both_gripper_joints": true,
+  "bank_policy": "Keep original36 nearest_teacher unchanged; nearest_teacher59_data_matched uses same algorithm/descriptor/tie/alignment/gate/bounds and all59 NN teachers, ascending context_id; never add DEV/FINAL. NN dataset row order remains unchanged.",
+  "constant_policy": "Original selected checkpoints and original TRAIN mean constant vectors; real bounds/gate retained; not all-capability-information removal.",
+  "numerics": "Preserve v242 CPU neural negative and v356 local rotation bit mismatch; GPU-generated original programs get native static audit before execution. No CPU numerical equivalence assumed."
+}

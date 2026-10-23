@@ -1,0 +1,6 @@
+stage,teacher_count,updates,Full_seed0,Full_seed1,Full_seed2,Full_total,seed_condition_denominator,independent_sources,selected_in_this_stage
+1_original36_update_choice,36,2000,14,8,8,30,45,5,True
+1_original36_update_choice,36,5000,11,6,9,26,45,5,False
+1_original36_update_choice,36,10000,9,8,9,26,45,5,False
+2_common_family_choice,36,2000,14,8,8,30,45,5,False
+2_common_family_choice,59,5000,11,10,10,31,45,5,True

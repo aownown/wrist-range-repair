@@ -1,0 +1,34 @@
+{
+  "original_rule": "one common step across full and constant and all three seeds; maximize mean original-clock strict full success over qualified source groups and seeds; tie fewer damaged original positives, then earlier step; report all candidates/models/seeds; no +40 or final-based selection",
+  "family_decision": {
+    "selected_common_family": "expanded59_step05000",
+    "reason": "higher_registered_original_clock_equal_source_equal_seed_full_mean",
+    "old_full_original_counts": [
+      14,
+      8,
+      8
+    ],
+    "new_full_original_counts": [
+      11,
+      10,
+      10
+    ],
+    "old_full_sum": 30,
+    "new_full_sum": 31,
+    "denominator_seed_context_cells": 45,
+    "old_full_equal_source_seed_mean": 0.6666666666666666,
+    "new_full_equal_source_seed_mean": 0.6888888888888889,
+    "damage_defined": false,
+    "damage_status": "NA_zero_source_positive_denominator",
+    "selection_uses_constant_scores": false,
+    "selection_uses_plus40": false,
+    "selection_uses_final": false,
+    "selection_uses_fitting_loss": false,
+    "all_full_constant_three_seeds_share_selected_family": true
+  },
+  "Constant_not_used_for_selection": true,
+  "plus40_FINAL_and_loss_not_used_for_selection": true,
+  "stage1_2000_full_reused_in_stage2": true,
+  "data_and_update_effects_not_separated": true,
+  "not_45_independent_sources": true
+}

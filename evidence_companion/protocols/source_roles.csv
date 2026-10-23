@@ -1,0 +1,73 @@
+task,role,source,status,reason
+Can,original_TRAIN_contributor,demo_109,contributes_retained_teacher,original prequalification nomination list not established here
+Can,original_TRAIN_contributor,demo_146,contributes_retained_teacher,original prequalification nomination list not established here
+Can,original_TRAIN_contributor,demo_150,contributes_retained_teacher,original prequalification nomination list not established here
+Can,original_TRAIN_contributor,demo_161,contributes_retained_teacher,original prequalification nomination list not established here
+Can,original_TRAIN_contributor,demo_163,contributes_retained_teacher,original prequalification nomination list not established here
+Can,original_TRAIN_contributor,demo_167,contributes_retained_teacher,original prequalification nomination list not established here
+Can,original_TRAIN_contributor,demo_184,contributes_retained_teacher,original prequalification nomination list not established here
+Can,original_TRAIN_contributor,demo_187,contributes_retained_teacher,original prequalification nomination list not established here
+Can,original_TRAIN_contributor,demo_194,contributes_retained_teacher,original prequalification nomination list not established here
+Can,original_TRAIN_contributor,demo_66,contributes_retained_teacher,original prequalification nomination list not established here
+Can,original_TRAIN_contributor,demo_76,contributes_retained_teacher,original prequalification nomination list not established here
+Can,original_TRAIN_contributor,demo_94,contributes_retained_teacher,original prequalification nomination list not established here
+Can,new_train_expansion,demo_117,normal_qualified,see expansion context table; no teacher is distinct from normal exclusion
+Can,new_train_expansion,demo_195,normal_qualified,see expansion context table; no teacher is distinct from normal exclusion
+Can,new_train_expansion,demo_84,normal_qualified,see expansion context table; no teacher is distinct from normal exclusion
+Can,new_train_expansion,demo_144,normal_qualified,see expansion context table; no teacher is distinct from normal exclusion
+Can,new_train_expansion,demo_185,normal_excluded,see expansion context table; no teacher is distinct from normal exclusion
+Can,new_train_expansion,demo_102,normal_excluded,see expansion context table; no teacher is distinct from normal exclusion
+Can,new_train_expansion,demo_142,normal_qualified,see expansion context table; no teacher is distinct from normal exclusion
+Can,new_train_expansion,demo_156,normal_qualified,see expansion context table; no teacher is distinct from normal exclusion
+Can,new_train_expansion,demo_70,normal_qualified,see expansion context table; no teacher is distinct from normal exclusion
+Can,new_train_expansion,demo_178,normal_qualified,see expansion context table; no teacher is distinct from normal exclusion
+Can,new_train_expansion,demo_196,normal_qualified,see expansion context table; no teacher is distinct from normal exclusion
+Can,new_train_expansion,demo_190,normal_qualified,see expansion context table; no teacher is distinct from normal exclusion
+Can,new_development,demo_174,normal_qualified,
+Can,new_development,demo_165,normal_qualified,
+Can,new_development,demo_67,normal_qualified,
+Can,new_development,demo_166,normal_qualified,
+Can,new_development,demo_106,normal_qualified,
+Can,new_development,demo_153,normal_excluded,normal finger2 range failure; three ROM cells NA; no replacement
+Can,new_final_confirmation,demo_173,normal_qualified,all five ROM cells NA when normal qualification fails; no replacement
+Can,new_final_confirmation,demo_162,normal_qualified,all five ROM cells NA when normal qualification fails; no replacement
+Can,new_final_confirmation,demo_188,finger_limit_normal_qualification,all five ROM cells NA when normal qualification fails; no replacement
+Can,new_final_confirmation,demo_110,normal_qualified,all five ROM cells NA when normal qualification fails; no replacement
+Can,new_final_confirmation,demo_170,action_boundary_grasp_normal_qualification,all five ROM cells NA when normal qualification fails; no replacement
+Can,new_final_confirmation,demo_119,normal_qualified,all five ROM cells NA when normal qualification fails; no replacement
+Can,new_final_confirmation,demo_120,normal_qualified,all five ROM cells NA when normal qualification fails; no replacement
+Can,new_final_confirmation,demo_171,normal_qualified,all five ROM cells NA when normal qualification fails; no replacement
+Can,new_final_confirmation,demo_126,normal_qualified,all five ROM cells NA when normal qualification fails; no replacement
+Can,new_final_confirmation,demo_148,normal_qualified,all five ROM cells NA when normal qualification fails; no replacement
+Can,new_final_confirmation,demo_147,normal_qualified,all five ROM cells NA when normal qualification fails; no replacement
+Can,new_final_confirmation,demo_79,normal_qualified,all five ROM cells NA when normal qualification fails; no replacement
+Lift,TRAIN,demo_171,normal_qualified,
+Lift,TRAIN,demo_141,normal_qualified,
+Lift,TRAIN,demo_87,normal_qualified,
+Lift,TRAIN,demo_65,normal_qualified,
+Lift,TRAIN,demo_78,normal_excluded,all9 normal qualification false; three ROM cells NA
+Lift,TRAIN,demo_114,normal_qualified,
+Lift,TRAIN,demo_157,normal_qualified,
+Lift,TRAIN,demo_160,normal_qualified,
+Lift,TRAIN,demo_107,normal_qualified,
+Lift,TRAIN,demo_144,normal_qualified,
+Lift,TRAIN,demo_86,normal_qualified,
+Lift,TRAIN,demo_158,normal_qualified,
+Lift,TRAIN,demo_97,normal_qualified,
+Lift,TRAIN,demo_101,normal_qualified,
+Lift,TRAIN,demo_95,normal_qualified,
+Lift,TRAIN,demo_150,normal_qualified,
+Lift,DEV,demo_134,normal_qualified,
+Lift,DEV,demo_145,normal_qualified,
+Lift,DEV,demo_139,normal_qualified,
+Lift,DEV,demo_153,normal_qualified,
+Lift,TEST,demo_69,normal_qualified,
+Lift,TEST,demo_84,normal_qualified,
+Lift,TEST,demo_54,normal_qualified,
+Lift,TEST,demo_183,normal_qualified,
+Lift,TEST,demo_18,normal_qualified,
+Lift,TEST,demo_71,normal_qualified,
+Lift,TEST,demo_186,normal_qualified,
+Lift,TEST,demo_99,normal_qualified,
+Lift,TEST,demo_166,normal_qualified,
+Lift,TEST,demo_127,normal_qualified,

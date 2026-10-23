@@ -1,0 +1,146 @@
+[
+  {
+    "method": "nn_expanded_full_seed0_step05000",
+    "mode": "full",
+    "seed": 0,
+    "step": 5000,
+    "checkpoint_sha256": "0bb8b55b7215cf819a0c3d41fe84e838d1c86c99f977ff67e9416b4e86d0fe19",
+    "fit_receipt_sha256": "fe562dbbf57c6c1672f8c273975e06b4291d120588744c0ebc6766c5b8342ab7",
+    "fit_plan_sha256": "0bd04bc43c9b0e3c299f3d3f4f14d2ef0485b6a24892c7c8ab3501bc332eae53",
+    "model_config": {
+      "width": 64,
+      "heads": 4,
+      "source_layers": 2,
+      "decoder_layers": 2,
+      "feedforward": 128
+    }
+  },
+  {
+    "method": "nn_expanded_full_seed1_step05000",
+    "mode": "full",
+    "seed": 1,
+    "step": 5000,
+    "checkpoint_sha256": "fb9c45e602d6db06d697ea17d17eef48482e81086fdf8151fb76efa24a4bbcb8",
+    "fit_receipt_sha256": "a4418e0ca5670f5f80fd69521480d0a6c383885d62e9a4e82ce1d29bf1956791",
+    "fit_plan_sha256": "e2b1575121ffeb87baab4152c19b90bdcd7515b028737f1108eeda8f3a8e0a06",
+    "model_config": {
+      "width": 64,
+      "heads": 4,
+      "source_layers": 2,
+      "decoder_layers": 2,
+      "feedforward": 128
+    }
+  },
+  {
+    "method": "nn_expanded_full_seed2_step05000",
+    "mode": "full",
+    "seed": 2,
+    "step": 5000,
+    "checkpoint_sha256": "3dd8646dee66c5e14489562f2367176a0e3d6d2311639708ee49e4a70c3e7bc0",
+    "fit_receipt_sha256": "6c574597d2b8fc3c33f9856d45fb23276a8f15a696c40a4a4a89d94b89883d6b",
+    "fit_plan_sha256": "a2bf6107428a01c39d5951cf98ba999e9c426de8fe859f40f92946bfc2dca67d",
+    "model_config": {
+      "width": 64,
+      "heads": 4,
+      "source_layers": 2,
+      "decoder_layers": 2,
+      "feedforward": 128
+    }
+  },
+  {
+    "method": "nn_expanded_constant_seed0_step05000",
+    "mode": "constant",
+    "seed": 0,
+    "step": 5000,
+    "checkpoint_sha256": "3587b46c546e9f594ceb2057527be9c89ffeac2cf2fb5e61568f2e1578213d5c",
+    "fit_receipt_sha256": "135d01ae9313493edee0680a93fd8999dc8198c135b3271c3edac88c41002173",
+    "fit_plan_sha256": "3d045e2835965e531439c1e13b701e1fd5d8f5ba0f58132bbd28bcae18946b75",
+    "model_config": {
+      "width": 64,
+      "heads": 4,
+      "source_layers": 2,
+      "decoder_layers": 2,
+      "feedforward": 128
+    },
+    "capability_constant": [
+      -0.9222392439842224,
+      0.9222392439842224,
+      -0.5611166954040527,
+      0.5611166954040527,
+      -0.9222392439842224,
+      0.9222392439842224,
+      -0.9777843356132507,
+      -0.02221802994608879,
+      -0.9222392439842224,
+      0.9222392439842224,
+      -0.005570422857999802,
+      1.1944578886032104,
+      0.042441319674253464,
+      0.3819718658924103
+    ]
+  },
+  {
+    "method": "nn_expanded_constant_seed1_step05000",
+    "mode": "constant",
+    "seed": 1,
+    "step": 5000,
+    "checkpoint_sha256": "b0a118585ce94d6c1627f49308a1f633cf4c89dbcd788305347b13bfa901cf06",
+    "fit_receipt_sha256": "849292e9bfbce5a971a98961667166ac712c18c6867f3f29ebbaa5e92841488e",
+    "fit_plan_sha256": "41f9c2e762de9641a1c115ad5b945d8825eab559ddeaf07915d11b4516b34fae",
+    "model_config": {
+      "width": 64,
+      "heads": 4,
+      "source_layers": 2,
+      "decoder_layers": 2,
+      "feedforward": 128
+    },
+    "capability_constant": [
+      -0.9222392439842224,
+      0.9222392439842224,
+      -0.5611166954040527,
+      0.5611166954040527,
+      -0.9222392439842224,
+      0.9222392439842224,
+      -0.9777843356132507,
+      -0.02221802994608879,
+      -0.9222392439842224,
+      0.9222392439842224,
+      -0.005570422857999802,
+      1.1944578886032104,
+      0.042441319674253464,
+      0.3819718658924103
+    ]
+  },
+  {
+    "method": "nn_expanded_constant_seed2_step05000",
+    "mode": "constant",
+    "seed": 2,
+    "step": 5000,
+    "checkpoint_sha256": "a6cafd810f0caaa1b4fc403849a6011819069b06104d1a71f8d49857f571c613",
+    "fit_receipt_sha256": "ea7d6d15990d1959711ae4697a5039d778694ee10332540b3dfe2acbcc946628",
+    "fit_plan_sha256": "baa9df29c793c3066b074e64a1a7915fdd36e730697c2ec10b76cde6cb8aa84a",
+    "model_config": {
+      "width": 64,
+      "heads": 4,
+      "source_layers": 2,
+      "decoder_layers": 2,
+      "feedforward": 128
+    },
+    "capability_constant": [
+      -0.9222392439842224,
+      0.9222392439842224,
+      -0.5611166954040527,
+      0.5611166954040527,
+      -0.9222392439842224,
+      0.9222392439842224,
+      -0.9777843356132507,
+      -0.02221802994608879,
+      -0.9222392439842224,
+      0.9222392439842224,
+      -0.005570422857999802,
+      1.1944578886032104,
+      0.042441319674253464,
+      0.3819718658924103
+    ]
+  }
+]

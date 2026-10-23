@@ -1,0 +1,115 @@
+{
+  "schema": "three_task_supplementary_goal_v490",
+  "sealed_at_utc": "2026-10-10T05:11:31.185718+00:00",
+  "task2": {
+    "task": "robomimic_Lift_PH_v141",
+    "hdf5_sha256": "e11f940bf6e70573e371699aa0c615094b6aeeaaf3ffd60f8777a4c68573b50f",
+    "TRAIN": [
+      "demo_171",
+      "demo_141",
+      "demo_87",
+      "demo_65",
+      "demo_78",
+      "demo_114",
+      "demo_157",
+      "demo_160",
+      "demo_107",
+      "demo_144",
+      "demo_86",
+      "demo_158",
+      "demo_97",
+      "demo_101",
+      "demo_95",
+      "demo_150"
+    ],
+    "DEV": [
+      "demo_134",
+      "demo_145",
+      "demo_139",
+      "demo_153"
+    ],
+    "TEST": [
+      "demo_69",
+      "demo_84",
+      "demo_54",
+      "demo_183",
+      "demo_18",
+      "demo_71",
+      "demo_186",
+      "demo_99",
+      "demo_166",
+      "demo_127"
+    ],
+    "TEST_rule": "first10_of_original_registered_TEST_order; names_only; no target-based replacements",
+    "dataset_partition_sha256": "9fce8a04bafb11314e612140b156e2e5ddefbe8d2753518ffe79cb5c099f1a00",
+    "prior_TRAIN_source_scores_sha256": "221b4e07843e2ad212c50dc910b0b289361df22e7051e5f551dbad606d5be543",
+    "prior_TRAIN_only_observation": "15/16 normal qualified;45 qualified wrist conditions;source-copy40 strict/45,5 strict failures; no TEST values inspected",
+    "default_ROMs": [
+      "wrist7_tight",
+      "wrist7_medium",
+      "wrist7_mild"
+    ],
+    "pretrial_scope": "all3 existing static geometric candidates for all5 prior qualified TRAIN source-copy strict failures",
+    "pretrial_caveat": "failure-conditioned teacher search is TRAIN supervision, NOT unbiased TEST performance or new breadth",
+    "teacher_rule": "qualified TRAIN source-copy success -> exact identity; else first independently accepted original-clock strict geometric candidate in old_weight/position/free order; unresolved negatives retained without invented positive labels",
+    "pretrial_gate": "confirm at least one actual fixedXYZ alternative under capability-induced execution change; absent gate continue bounded TRAIN/DEV diagnosis before new TEST",
+    "training_plan": {
+      "model": "unchanged SourceCapabilityEditor Config defaults 184202 params",
+      "fresh_initialization_not_Can_transfer": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "optimizer": "AdamW",
+      "lr": 0.0003,
+      "weight_decay": 0.0001,
+      "batch_size": 8,
+      "steps": 5000,
+      "checkpoint_rule": "fixed common5000 chosen here before any new Lift TEST arrays; DEV diagnostic only, no TEST selection",
+      "sampling": "same source/repair-vs-identity balanced sampler and gated composed imitation objective"
+    },
+    "TEST_methods": [
+      "source_copy",
+      "clip_common_fixedXYZ",
+      "clip_guard_only_fixedXYZ",
+      "nearest_teacher",
+      "fixedXYZ__old_weight_multistart",
+      "fixedXYZ__position_priority_multistart",
+      "fixedXYZ__free_orientation_multistart",
+      "nn_seed0",
+      "nn_seed1",
+      "nn_seed2"
+    ],
+    "TEST_normal_unqualified_or_initial_ROM_illegal": "NA all affected cells; no replacement/projection; keep failures",
+    "TEST_activation_gate": "teacher acceptance + frozen3 weights and bank/algorithm hashes + complete normal-only10 qualification + all test programs sealed BEFORE restricted outcomes",
+    "nominal_TEST_conditions": 30,
+    "nominal_TEST_method_programs": 300,
+    "source_unit": 10,
+    "no_ood_cross_embodiment_or_zero_shot_claim": true
+  },
+  "task3": {
+    "stage": "integrate_into_the_same_new_Lift_TEST_set_no_duplicate_old_Can_matrix",
+    "fair_resource": "one common pinned CPU core,one-thread libraries,CUDA invisible for EVERY deployed method including learned generation",
+    "training_GPU_cost_reported_separately": true,
+    "one_discarded_warmup_and_measured_repeats": 3,
+    "timed_boundary": "warm preloaded raw source/normal trace/private FK and frozen teacher bank/weights; features+forward/solver/retrieval+gate+materialization+contract included; exclude setup/fileIO/scoring/model training",
+    "no_cpu_latency_gpu_quality_splice": true,
+    "each_retained_timed_program_actual_execute_from_same_initial_state": true,
+    "repeat_output_check": "all program/mask/head arrays keys/shape/dtype/body bytes must match first generated programme; mismatches retained and no latency equivalence claim",
+    "counterbalance": "cycle method order by condition index +3*repetition modulo10",
+    "full_quality_metrics": "original clock strict,+40 separate,repair and damage conditional denominators,all3 NN seeds,source-group uncertainty",
+    "CPU_v242_old_negative_preserved": true,
+    "not_end_to_end_or_training_amortization_advantage": true
+  },
+  "shared_standards": {
+    "fixed_XYZ_commands_exact": true,
+    "original_gripper_initial_state_controller_clock_and_carry": true,
+    "native_goal": true,
+    "all9_before_and_after_every_physics_step_tolerance": 1e-09,
+    "original20Hz_25_steps": true,
+    "uniform_plus40_separate": true,
+    "failure_NA_seed_damage_retained": true,
+    "no_success_definition_relaxation": true
+  }
+}

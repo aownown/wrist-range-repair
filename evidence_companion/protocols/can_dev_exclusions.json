@@ -1,0 +1,43 @@
+[
+  {
+    "episode_id": "demo_153",
+    "reason": "normal_current_guard_source_not_strictly_qualified",
+    "qualification": {
+      "qualified": false,
+      "native_task_goal": true,
+      "whole_episode_all9_legal": false,
+      "carry": {
+        "qualified": true,
+        "reason": "qualified",
+        "carry_start_action": 54,
+        "carry_end_action_exclusive": 93,
+        "held_actions": 39,
+        "failed_action_indices": []
+      },
+      "native_goal_range_and_carry_all_required": true,
+      "target_outcomes_used": false,
+      "scope": "normal TRAIN source qualification, not a repair"
+    },
+    "violating_joints": [
+      {
+        "joint": "gripper0_finger_joint2",
+        "range": [
+          -0.04,
+          0.0
+        ],
+        "units": "m",
+        "maximum_positive_excess": 0.00010113650584313988,
+        "steps_above_1e_9": 17,
+        "by_phase": {
+          "whole_episode": {
+            "maximum_positive_excess": 0.00010113650584313988,
+            "steps_above_1e_9": 17
+          }
+        }
+      }
+    ],
+    "restricted_dev_condition_count": 3,
+    "normal_negative_target_outcomes_NA": true,
+    "no_replacement": true
+  }
+]
