@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Please cite the paper when publication metadata becomes available; this repository is an evidence companion."
+title: "Repairing manipulation programs under wrist range restrictions"
+type: software
+authors:
+  - family-names: Liu
+    given-names: Yanming
+  - family-names: Huo
+    given-names: Pengyu
+  - family-names: Guo
+    given-names: Yusen
+  - family-names: Lai
+    given-names: Kaixiang
+  - family-names: Liu
+    given-names: Huijuan
+  - family-names: Ye
+    given-names: Huixian
+  - family-names: Li
+    given-names: Qiliang
