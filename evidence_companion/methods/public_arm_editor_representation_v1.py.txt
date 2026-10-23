@@ -1,0 +1,64 @@
+"""Source-preserving orientation/reference editor schema; no execution certificate.
+Inputs are known source goals, initial observed context and declared joint bounds.
+Targets, task outcomes, IDs and restricted future trajectories are not inputs.
+"""
+import numpy as np
+from scipy.spatial.transform import Rotation
+
+RAW_FIELDS = {'source_target_poses','source_gripper_commands','initial_reference7',
+              'initial_object_position','initial_object_quaternion_wxyz','arm_bounds7'}
+SOURCE_DIM, CONTEXT_DIM, CAPABILITY_DIM = 11, 14, 14
+
+
+def validate_raw(raw):
+    if set(raw) != RAW_FIELDS:raise ValueError('Exact input allowlist; no labels/IDs/future restricted states')
+    x={k:np.asarray(v,dtype=np.float64) for k,v in raw.items()};n=len(x['source_target_poses'])
+    expected={'source_target_poses':(n,4,4),'source_gripper_commands':(n,), 'initial_reference7':(7,), 'initial_object_position':(3,), 'initial_object_quaternion_wxyz':(4,), 'arm_bounds7':(7,2)}
+    if n<2 or any(x[k].shape!=s or not np.isfinite(x[k]).all() for k,s in expected.items()):raise ValueError('Finite complete original source and initial context required')
+    pose=x['source_target_poses'];rot=pose[:,:3,:3];b=x['arm_bounds7'];q=x['initial_reference7']
+    if not np.array_equal(pose[:,3],np.tile([0.,0.,0.,1.],(n,1))) or not np.allclose(rot.transpose(0,2,1)@rot,np.eye(3),rtol=0,atol=1e-6) or np.any(np.linalg.det(rot)<.999999):raise ValueError('Rigid source poses required')
+    if np.any(b[:,0]>=b[:,1]) or np.any(q<=b[:,0]) or np.any(q>=b[:,1]):raise ValueError('Strictly interior original reference required; never project initial state')
+    if abs(np.linalg.norm(x['initial_object_quaternion_wxyz'])-1)>1e-6:raise ValueError('Unit observed object quaternion required')
+    return x
+
+
+def features(raw):
+    x=validate_raw(raw);pose=x['source_target_poses'];n=len(pose);r0=pose[0,:3,:3];origin=pose[0,:3,3]
+    relative_rot=r0.T@pose[:,:3,:3];relative_pos=(pose[:,:3,3]-origin)@r0
+    tau=np.linspace(0.,1.,n)
+    source=np.concatenate((relative_pos/.3,relative_rot[:,:,:2].reshape(n,6),x['source_gripper_commands'][:,None],tau[:,None]),axis=1)
+    # Quaternion is an initial observation, not a repaired-trajectory target.
+    context=np.concatenate((x['initial_reference7']/np.pi,(x['initial_object_position']-origin)@r0/.3,x['initial_object_quaternion_wxyz']))
+    return dict(source=source.astype(np.float32),context=context.astype(np.float32),capability=(x['arm_bounds7']/np.pi).ravel().astype(np.float32),query_time=tau.astype(np.float32),initial_reference=x['initial_reference7'].astype(np.float32),bounds=x['arm_bounds7'].astype(np.float32))
+
+
+def teacher_targets(raw, program):
+    x=validate_raw(raw);source=x['source_target_poses'];p=np.asarray(program['target_poses']);q=np.asarray(program['references']);n=len(source)
+    if p.shape!=(n,4,4) or q.shape!=(n,7) or not np.isfinite(p).all() or not np.isfinite(q).all():raise ValueError('Finite aligned teacher program required')
+    if not np.array_equal(p[:,:3,3],source[:,:3,3]) or not np.array_equal(p[:,3],source[:,3]) or not np.array_equal(program['gripper_commands'],x['source_gripper_commands']):raise ValueError('Position/gripper/clock edits outside declared output representation')
+    if np.any(q<x['arm_bounds7'][:,0]) or np.any(q>x['arm_bounds7'][:,1]):raise ValueError('Illegal teacher references are not clipped')
+    rotations=p[:,:3,:3]
+    if not np.allclose(rotations.transpose(0,2,1)@rotations,np.eye(3),rtol=0,atol=1e-6) or np.any(np.linalg.det(rotations)<.999999):raise ValueError('Rigid teacher rotations required')
+    delta=np.zeros((n,3));changed=np.any(p!=source,axis=(1,2))
+    # Preserve mathematically untouched rows exactly, not tiny log(R.T@R) noise.
+    if changed.any():delta[changed]=Rotation.from_matrix(source[changed,:3,:3].transpose(0,2,1)@rotations[changed]).as_rotvec()
+    return dict(rotation_delta=delta,joint_references=q.copy())
+
+
+def decode(raw, rotation_delta, joint_references):
+    x=validate_raw(raw);n=len(x['source_target_poses']);v=np.asarray(rotation_delta);q=np.asarray(joint_references)
+    if v.shape!=(n,3) or q.shape!=(n,7) or not np.isfinite(v).all() or not np.isfinite(q).all():raise ValueError('Finite per-action output on original source clock required')
+    if np.any(q<x['arm_bounds7'][:,0]) or np.any(q>x['arm_bounds7'][:,1]):raise ValueError('Predicted illegal references rejected, not clipped')
+    p=x['source_target_poses'].copy();changed=np.any(v!=0,axis=1)
+    if changed.any():p[changed,:3,:3]=p[changed,:3,:3]@Rotation.from_rotvec(v[changed]).as_matrix()
+    return dict(target_poses=p,gripper_commands=x['source_gripper_commands'].copy(),references=q.copy())
+
+
+def pad_features(rows):
+    if not rows:raise ValueError('Nonempty feature batch required')
+    b,t=len(rows),max(len(r['source']) for r in rows)
+    result={k:np.stack([r[k] for r in rows]) for k in ('context','capability','initial_reference','bounds')}
+    result.update(source=np.zeros((b,t,SOURCE_DIM),np.float32),query_time=np.zeros((b,t),np.float32),valid_mask=np.zeros((b,t),bool))
+    for i,r in enumerate(rows):
+        n=len(r['source']);result['source'][i,:n]=r['source'];result['query_time'][i,:n]=r['query_time'];result['valid_mask'][i,:n]=True
+    return result

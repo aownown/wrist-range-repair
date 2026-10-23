@@ -1,0 +1,21 @@
+"""Cheap source-joint clip FK parent, zero XYZ edits, no optimizer or target outcomes.
+The previously frozen 40mm XYZ clip controls are NOT used as fixedXYZ results.
+"""
+import numpy as np
+from scipy.spatial.transform import Rotation
+
+def compile_parent(fk,source,nominal_q,q0,bounds,weights):
+ if set(source)!={'target_poses','gripper_commands'}:raise ValueError('Only source pose/gripper inputs')
+ poses=np.asarray(source['target_poses'],dtype=np.float64);n=len(poses);g=np.asarray(source['gripper_commands'],dtype=np.float64);q=np.asarray(nominal_q,dtype=np.float64);q0=np.asarray(q0,dtype=np.float64);b=np.asarray(bounds,dtype=np.float64);w=np.asarray(weights,dtype=np.float64)
+ if n<2 or poses.shape!=(n,4,4) or g.shape!=(n,) or q.shape!=(n,7) or q0.shape!=(7,) or b.shape!=(7,2) or w.shape!=(n,) or any(not np.isfinite(v).all() for v in [poses,g,q,q0,b,w]) or np.any(w<0) or np.any(w>1):raise ValueError('Finite full source clock')
+ lo,hi=b[:,0]+.02,b[:,1]-.02
+ if np.any(lo>=hi) or np.any(q0<=lo) or np.any(q0>=hi):raise ValueError('Original q0 strictly inside fixed guard inset; no projection')
+ clipped=np.clip(q,lo,hi);output=poses.copy();refs=np.tile(q0,(n,1));fk_poses=poses.copy();records=[]
+ for i in np.flatnonzero(w>0):
+  query=clipped[i].copy();before=query.copy();p=np.asarray(fk(query),dtype=np.float64)
+  if p.shape!=(4,4) or not np.isfinite(p).all() or not np.array_equal(query,before) or not np.array_equal(p[3],[0.,0.,0.,1.]) or not np.allclose(p[:3,:3].T@p[:3,:3],np.eye(3),rtol=0,atol=1e-6) or np.linalg.det(p[:3,:3])<.999999:raise ValueError('Nonmutating rigid native FK required')
+  fk_poses[i]=p;refs[i]=q0+w[i]*(clipped[i]-q0)
+  if not np.array_equal(poses[i,:3,:3],p[:3,:3]):
+   delta=Rotation.from_matrix(poses[i,:3,:3].T@p[:3,:3]).as_rotvec();output[i,:3,:3]=poses[i,:3,:3]@Rotation.from_rotvec(w[i]*delta).as_matrix()
+  records.append(dict(action_index=int(i),logical_FK_queries=1,private_clipped_coordinates=int(np.count_nonzero(clipped[i]!=q[i]))))
+ return dict(program=dict(target_poses=output,gripper_commands=g.copy(),references=refs),details=dict(source_nominal_q=q.copy(),clipped_nominal_q=clipped,clip_FK_poses=fk_poses,weights=w.copy()),records=records,logical_method_FK_queries=len(records),optimizer_queries=0,extra_nominal_robot_joint_trace_and_model_geometry_disclosed=True,no_physical_state_projection=True)

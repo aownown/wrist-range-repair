@@ -1,0 +1,35 @@
+"""Opt-in training objective matching the unchanged action deployment gate.
+
+No existing trainer, model, weights, labels, or deployment paths are modified.
+Gate weights are fixed source-derived metadata, never learned or outcome chosen.
+"""
+
+
+def gated_training_prediction(prediction, batch, gate_weights):
+    import torch
+    from public_arm_source_capability_editor_v1 import bounded_reference
+
+    if set(prediction) != {"rotation_delta", "reference_latent", "joint_references"}:
+        raise ValueError("Only unchanged model output schema accepted")
+    valid = batch["valid_mask"]
+    v, z = prediction["rotation_delta"], prediction["reference_latent"]
+    w = gate_weights
+    if (valid.dtype != torch.bool or w.shape != valid.shape
+            or not w.is_floating_point() or w.requires_grad
+            or w.device != v.device or w.dtype != v.dtype
+            or v.shape != (*valid.shape, 3) or z.shape != (*valid.shape, 7)
+            or z.dtype != v.dtype or z.device != v.device
+            or prediction["joint_references"].shape != z.shape
+            or not torch.isfinite(w).all() or torch.any(w < 0) or torch.any(w > 1)
+            or torch.any(w[~valid] != 0)):
+        raise ValueError("Fixed aligned finite source gate with zero padding required")
+    if not torch.isfinite(v).all() or not torch.isfinite(z).all():
+        raise ValueError("Finite model latents required before composition")
+    # Gate latent, not decoded reference displacement: tanh(w*z) != w*tanh(z).
+    gated_v, gated_z = v * w[..., None], z * w[..., None]
+    q = bounded_reference(gated_z, batch["initial_reference"], batch["bounds"])
+    return dict(
+        rotation_delta=torch.where(valid[..., None], gated_v, torch.zeros_like(gated_v)),
+        reference_latent=torch.where(valid[..., None], gated_z, torch.zeros_like(gated_z)),
+        joint_references=torch.where(valid[..., None], q, batch["initial_reference"][:, None]),
+    )

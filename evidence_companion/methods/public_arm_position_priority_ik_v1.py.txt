@@ -1,0 +1,81 @@
+"""Bounded matched-multistart IK controls; keep source XYZ/gripper/clock/gate.
+
+All candidates rank by their SAME variant objective and common regularizer,
+never execution success. This is ordinary kinematic planning, not innovation,
+continuous teacher qualification, collision checking or learned recovery.
+"""
+import numpy as np
+from scipy.optimize import least_squares
+from scipy.spatial.transform import Rotation
+from public_arm_command_path_audit_v1 import finite
+
+CONFIG=dict(arm_inset_rad=.02,temporal_weight_m_per_rad=.002,max_nfev=40,
+            ftol=1e-8,xtol=1e-8,gtol=1e-8,maximum_fk_calls_per_start=400,
+            seeds=['previous_selected_or_nominal','nominal_source','bounds_midpoint'])
+VARIANTS={'old_weight_multistart':.05,'position_priority_multistart':.005,'free_orientation_multistart':0.}
+
+
+def solve_candidate(fk,target,seed,inner,regularizer,weight):
+    target=finite(target,(4,4));inner=finite(inner,(7,2));seed=finite(seed,(7,));prev=finite(regularizer,(7,));calls=0
+    if weight not in VARIANTS.values() or np.any(inner[:,0]>=inner[:,1]):raise ValueError('Declared finite bounded objective required')
+    def evaluate(q):
+        nonlocal calls
+        calls+=1
+        if calls>CONFIG['maximum_fk_calls_per_start']:raise ValueError('Prospective per-start FK budget exceeded')
+        pose=finite(fk(q),(4,4));position=pose[:3,3]-target[:3,3]
+        rotation=Rotation.from_matrix(target[:3,:3].T@pose[:3,:3]).as_rotvec()
+        return pose,position,rotation
+    def residual(q):
+        _,pos,rot=evaluate(q)
+        return np.r_[pos,weight*rot,CONFIG['temporal_weight_m_per_rad']*(q-prev)]
+    x0=np.minimum(np.maximum(seed,inner[:,0]+1e-9),inner[:,1]-1e-9)
+    opt=least_squares(residual,x0,bounds=(inner[:,0],inner[:,1]),max_nfev=CONFIG['max_nfev'],
+        ftol=CONFIG['ftol'],xtol=CONFIG['xtol'],gtol=CONFIG['gtol'])
+    pose,pos,rot=evaluate(opt.x)
+    q=finite(opt.x,(7,))
+    if np.any(q<inner[:,0]) or np.any(q>inner[:,1]):raise ValueError('No illegal candidate or physical projection allowed')
+    cost=.5*float(np.dot(pos,pos)+weight**2*np.dot(rot,rot)+CONFIG['temporal_weight_m_per_rad']**2*np.dot(q-prev,q-prev))
+    if not np.isfinite(cost) or abs(cost-float(opt.cost))>1e-12:raise ValueError('Candidate objective must match its optimizer residual cost')
+    return q,pose,dict(position_error_m=float(np.linalg.norm(pos)),orientation_error_rad=float(np.linalg.norm(rot)),
+        objective_cost=cost,optimizer_cost=float(opt.cost),nfev=int(opt.nfev),optimizer_status=int(opt.status),
+        solver_success=bool(opt.success),forward_queries=calls,private_seed_projection_not_robot_state_clipping=True,
+        not_collision_continuous_teacher_reachability_or_task_success=True)
+
+
+def compile_variant(fk,source_poses,gripper_commands,nominal_q,initial_reference,bounds,need,weights,variant):
+    if variant not in VARIANTS:raise ValueError('One of three prospectively fixed objectives required')
+    poses=finite(source_poses);n=len(poses);grips=finite(gripper_commands,(n,));nom=finite(nominal_q,(n,7))
+    q0=finite(initial_reference,(7,));b=finite(bounds,(7,2));w=finite(weights,(n,));need=np.asarray(need,bool)
+    if poses.shape!=(n,4,4) or n<1 or need.shape!=(n,) or np.any(w<0) or np.any(w>1):raise ValueError('Complete fixed source and gate required')
+    if (not np.allclose(poses[:,3,:],[0,0,0,1],rtol=0,atol=1e-12)
+        or not np.allclose(np.swapaxes(poses[:,:3,:3],1,2)@poses[:,:3,:3],np.eye(3),rtol=0,atol=1e-6)
+        or np.any(np.linalg.det(poses[:,:3,:3])<.999999)):raise ValueError('Original rigid source pose archive required')
+    inner=b.copy();inner[:,0]+=CONFIG['arm_inset_rad'];inner[:,1]-=CONFIG['arm_inset_rad']
+    if np.any(inner[:,0]>=inner[:,1]) or np.any(q0<inner[:,0]) or np.any(q0>inner[:,1]):raise ValueError('Original initial reference must remain inside unchanged guard inset')
+    solutions=np.repeat(q0[None],n,axis=0);fk_poses=poses.copy();records=[];previous=None;active=np.flatnonzero(w>0)
+    for i in range(n):
+        if w[i]==0:previous=None;continue
+        bounded_nominal=np.clip(nom[i],inner[:,0],inner[:,1])
+        regularizer=bounded_nominal if previous is None else previous.copy()
+        seeds=[nom[i] if previous is None else previous.copy(),nom[i],(inner[:,0]+inner[:,1])/2]
+        candidates=[]
+        for index,seed in enumerate(seeds):
+            q,p,r=solve_candidate(fk,poses[i],seed,inner,regularizer,VARIANTS[variant])
+            r.update(seed_index=index,seed_kind=CONFIG['seeds'][index],action_index=i,
+                     common_regularizer7=regularizer.tolist(),solution7=q.tolist())
+            candidates.append((q,p,r))
+        choice=min(range(3),key=lambda j:(candidates[j][2]['objective_cost'],j))
+        q,p,r=candidates[choice];solutions[i]=q;fk_poses[i]=p;previous=q.copy()
+        records.append(dict(action_index=i,selected_seed_index=choice,candidates=[x[2] for x in candidates],
+            selected_position_error_m=r['position_error_m'],selected_orientation_error_rad=r['orientation_error_rad'],
+            selected_objective_cost=r['objective_cost'],forward_queries=sum(x[2]['forward_queries'] for x in candidates),
+            source_only_no_target_execution_or_success_input=True))
+    refs=np.repeat(q0[None],n,axis=0);edited=poses.copy()
+    for i in active:
+        refs[i]=q0+w[i]*(solutions[i]-q0)
+        delta=Rotation.from_matrix(poses[i,:3,:3].T@fk_poses[i,:3,:3]).as_rotvec()
+        edited[i,:3,:3]=poses[i,:3,:3]@Rotation.from_rotvec(w[i]*delta).as_matrix()
+    if np.any(refs<b[:,0]) or np.any(refs>b[:,1]):raise ValueError('No illegal command reference clipping')
+    program=dict(target_poses=edited,gripper_commands=grips.copy(),references=refs)
+    details=dict(source_guard_need=need.copy(),weights=w.copy(),ik_solution=solutions,ik_fk_poses=fk_poses)
+    return program,details,records

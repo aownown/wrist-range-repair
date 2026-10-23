@@ -1,0 +1,44 @@
+"""Original carry/clock strict metrics, with absent carry UNAVAILABLE rather than zero.
+
+Missing source reference never becomes an empty successful window or an
+algorithm failure. This does not change physics, controller or defined-carry
+criteria. Normal-source eligibility is a separate causal-cohort variable.
+"""
+import numpy as np
+from public_arm_terminal_hold_v1 import hold_metrics
+
+
+def carry_counts(signals,n,A,O):
+ if type(n) is not int or n<1 or len(signals)!=n+40:raise ValueError('Entire original source clock plus fixed40 actions required')
+ if A is None or O is None:
+  if A is not None or O is not None:raise ValueError('Both original carry bounds absent together; no imputation')
+  return None,None
+ if type(A) is not int or type(O) is not int or not 0<=A<O<=n:raise ValueError('Original nonempty carry window must remain inside source clock')
+ for i,row in enumerate(signals):
+  if row['action_index']!=i or type(row['before']['grasp']) is not bool or type(row['after']['grasp']) is not bool:raise ValueError('Complete indexed original20Hz boolean grasp signals')
+ return sum(row['before']['grasp'] and row['after']['grasp'] for row in signals[A:O]),O-A
+
+
+def nullable_hold_metrics(boundary_goals,n,prefix_legal,whole_legal,held,required):
+ g=np.asarray(boundary_goals)
+ if type(n) is not int or n<1 or g.dtype!=np.bool_ or g.shape!=(n+41,):raise ValueError('Complete fresh native20Hz goals at N+41 boundaries')
+ if type(prefix_legal) is not bool or type(whole_legal) is not bool:raise ValueError('Independently checked original all9 booleans')
+ if held is not None and required is not None:
+  if type(held) is not int or type(required) is not int or not 0<=held<=required<=n or required==0:raise ValueError('Defined nonempty original carry counts')
+  result=hold_metrics(g,n,prefix_legal,whole_legal,held,required)
+  return dict(result,original_carry_reference_available=True,strict_evaluation_status='defined_original_carry')
+ if held is not None or required is not None:raise ValueError('Missing original carry counts both unavailable, not partially filled')
+ extension=g[n+1:];first=np.flatnonzero(extension)
+ return dict(source_horizon_native_goal=bool(g[n]),source_horizon_strict=None,extended_native_goal=bool(g[-1]),extended_strict=None,
+  extension_goal_true_boundaries=int(extension.sum()),first_goal_completed_hold_actions=int(first[0]+1) if len(first) else None,
+  last_half_second_sampled_goal_persistent=bool(g[-11:].all()),last_half_second_sampled_goal_count=int(g[-11:].sum()),last_half_second_sample_count=11,
+  original_horizon_results_not_replaced=True,persistence_only_at_20hz_not_dense_physics=True,
+  original_carry_reference_available=False,strict_evaluation_status='unavailable_missing_original_carry_not_algorithm_failure')
+
+
+def reference_status_consistent(job,held,required):
+ status=job['carry_reference_status'];available=held is not None and required is not None
+ if status['carry_reference_available']!=available or status['strict_target_carry_scorable']!=available or status['normal_source_qualified']!=job['source_qualification']['qualified']:raise ValueError('Original source qualification/carry status changed')
+ if not available and (job['carry_start_action'] is not None or job['carry_end_action_exclusive'] is not None):raise ValueError('Original missing carry cannot be imputed or moved')
+ return dict(status,actual_carry_held_actions=held,actual_carry_required_actions=required,
+  source_qualification_not_relabelled_by_target_execution=True,strict_score_unavailable_not_zero=not available)

@@ -1,0 +1,37 @@
+"""Frozen cheap nearest-teacher editor; TRAIN self retrieval is expressly allowed.
+Query: source targets, initial observation/reference, capability, source-only mask.
+No restricted query outcomes or future states. Teachers stay in TRAIN only.
+"""
+import numpy as np
+from public_arm_editor_representation_v1 import validate_raw,features
+from public_arm_editor_teacher_latents_v1 import reference_latent
+from public_arm_editor_materialization_v1 import materialize
+ANCHORS=16
+
+def descriptor(raw):
+    x=validate_raw(raw); f=features(x);n=len(f['source']);t=np.linspace(0.,1.,n);u=np.linspace(0.,1.,ANCHORS)
+    s=np.column_stack([np.interp(u,t,f['source'][:,j].astype(np.float64)) for j in range(11)])
+    return np.concatenate((s.ravel()/np.sqrt(ANCHORS*11),f['context'].astype(np.float64)/np.sqrt(14),f['capability'].astype(np.float64)/np.sqrt(14),[np.log(n/128.)]))
+
+def entry(raw,target,weights,program,metadata):
+    x=validate_raw(raw); w=np.asarray(weights,dtype=np.float64);n=len(w)
+    if w.shape!=(len(x['source_target_poses']),) or not np.isfinite(w).all() or np.any(w<0) or np.any(w>1):raise ValueError('Valid fixed source-only mask')
+    z,diagnostic=reference_latent(x,target['joint_references']);v=np.asarray(target['rotation_delta'],dtype=np.float64)
+    if v.shape!=(n,3) or not np.isfinite(v).all() or np.any(v[w==0]!=0) or np.any(z[w==0]!=0):raise ValueError('Teacher edits strictly within mask')
+    rotation=np.zeros_like(v);latent=np.zeros_like(z);active=w>0
+    rotation[active]=v[active]/w[active,None];latent[active]=z[active]/w[active,None]
+    return dict(raw=x,weights=w,program={k:np.asarray(a).copy() for k,a in program.items()},rotation_template=rotation,reference_template=latent,descriptor=descriptor(x),metadata=metadata,inverse_diagnostic=diagnostic)
+
+def nearest(raw,weights,entries):
+    x=validate_raw(raw); w=np.asarray(weights,dtype=np.float64);n=len(x['source_target_poses'])
+    if w.shape!=(n,) or not np.isfinite(w).all() or np.any(w<0) or np.any(w>1) or not entries:raise ValueError('Valid query mask and nonempty TRAIN bank')
+    d=descriptor(x);distances=np.asarray([np.dot(d-e['descriptor'],d-e['descriptor']) for e in entries]);i=int(np.argmin(distances));e=entries[i]
+    exact=all(np.array_equal(x[k],e['raw'][k]) for k in x) and np.array_equal(w,e['weights'])
+    if exact:
+        program={k:v.copy() for k,v in e['program'].items()}
+    else:
+        t=np.linspace(0.,1.,len(e['weights']));u=np.linspace(0.,1.,n)
+        rotation=np.column_stack([np.interp(u,t,e['rotation_template'][:,j]) for j in range(3)])*w[:,None]
+        latent=np.column_stack([np.interp(u,t,e['reference_template'][:,j]) for j in range(7)])*w[:,None]
+        program=materialize(x,rotation,latent)
+    return program,dict(selected_index=i,selected_train_context_id=e['metadata']['context_id'],descriptor_squared_distance=float(distances[i]),exact_known_input_and_mask_cache_hit=exact,all_train_contexts_including_self_eligible=True,query_restricted_outcomes_or_future_states_used=False,alignment='linear normalized-time interpolation of teacher ungated rotation/bounded-reference latents; query source-only gating',not_physical_success_certificate=True)

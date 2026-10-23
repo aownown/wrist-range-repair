@@ -1,0 +1,93 @@
+"""Matched TRAIN-only gate-composed objective; all original model/label paths unchanged."""
+import hashlib
+
+import numpy as np
+import torch
+
+from public_arm_editor_fit_core_v1 import balanced_probabilities, tensors
+from public_arm_source_capability_editor_v1 import imitation_loss
+from public_arm_editor_coverage_contract_v4 import validate_run_selection
+from public_arm_gate_composed_training_v1 import gated_training_prediction
+
+
+def tensors_with_gate(samples, device):
+    batch, target = tensors(samples, device)
+    weights = np.zeros(batch['valid_mask'].shape, dtype=np.float32)
+    for i, sample in enumerate(samples):
+        n = len(sample['features']['source'])
+        w = np.asarray(sample['gate_weights'], dtype=np.float32)
+        if w.shape != (n,) or not np.isfinite(w).all() or np.any(w < 0) or np.any(w > 1):
+            raise ValueError('Unchanged source-only per-action gate required')
+        weights[i, :n] = w
+    return batch, target, torch.from_numpy(weights).to(device)
+
+
+def evaluate_same_context_composed(model, samples, device):
+    training = model.training
+    model.eval()
+    rows = []
+    with torch.inference_mode():
+        for sample in samples:
+            batch, target, w = tensors_with_gate([sample], device)
+            prediction = model(batch)
+            deployed = gated_training_prediction(prediction, batch, w)
+            direct_loss, direct_parts = imitation_loss(prediction, target, batch['valid_mask'], batch['bounds'])
+            deployed_loss, deployed_parts = imitation_loss(deployed, target, batch['valid_mask'], batch['bounds'])
+            if not torch.isfinite(direct_loss) or not torch.isfinite(deployed_loss):
+                raise ValueError('Finite direct and deployment objective diagnostics required')
+            rows.append(dict(program_id=sample['metadata']['program_id'], source_group=sample['metadata']['source_group'],
+                repaired_original_failure=sample['metadata']['repaired_original_failure'],
+                loss=float(deployed_loss), direct_ungated_loss=float(direct_loss),
+                rotation=float(deployed_parts['rotation']), reference=float(deployed_parts['reference']),
+                reference_difference=float(deployed_parts['reference_difference'])))
+    model.train(training)
+    groups = {}
+    for repair, name in ((True, 'repaired'), (False, 'originally_successful')):
+        group = [r for r in rows if r['repaired_original_failure'] == repair]
+        if not group:
+            raise ValueError('All originally successful and repaired strata retained')
+        groups[name] = dict(contexts=len(group), mean_loss=float(np.mean([r['loss'] for r in group])),
+                           maximum_loss=max(r['loss'] for r in group),
+                           mean_direct_ungated_loss=float(np.mean([r['direct_ungated_loss'] for r in group])))
+    return dict(rows=rows, groups=groups,
+                balanced_context_loss=.5 * (groups['repaired']['mean_loss'] + groups['originally_successful']['mean_loss']),
+                primary_loss_includes_exact_registered_gate_composition=True,
+                direct_loss_is_diagnostic_not_checkpoint_selection=True,
+                same_training_contexts_only=True, native_execution_not_evaluated=True)
+
+
+def fit_same_context_composed(model, samples, gate, selected_ids, device, steps, batch_size, seed, learning_rate, callback):
+    validate_run_selection(gate, samples, selected_ids)
+    if (steps, batch_size, learning_rate) != (2000, 16, .0003) or seed not in (0, 1, 2):
+        raise ValueError('Unchanged matched fixed budget and all original seeds required')
+    probabilities = balanced_probabilities(samples)
+    rng = np.random.default_rng(seed)
+    torch.manual_seed(seed)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=1e-4)
+    callback(0, evaluate_same_context_composed(model, samples, device), model, optimizer)
+    model.train()
+    sampling_hash = hashlib.sha256()
+    first_indices = None
+    for step in range(1, steps + 1):
+        indices = rng.choice(len(samples), size=batch_size, replace=True, p=probabilities)
+        sampling_hash.update(indices.astype('<i8').tobytes())
+        if first_indices is None:
+            first_indices = indices.tolist()
+        batch, target, weights = tensors_with_gate([samples[int(i)] for i in indices], device)
+        optimizer.zero_grad(set_to_none=True)
+        prediction = gated_training_prediction(model(batch), batch, weights)
+        loss, _ = imitation_loss(prediction, target, batch['valid_mask'], batch['bounds'])
+        if not torch.isfinite(loss):
+            raise ValueError('Nonfinite gate-composed training loss')
+        loss.backward()
+        norm = torch.nn.utils.clip_grad_norm_(model.parameters(), 1.)
+        if not torch.isfinite(norm):
+            raise ValueError('Nonfinite gate-composed gradient')
+        optimizer.step()
+        if step in (100, 500, 1000, 2000):
+            callback(step, evaluate_same_context_composed(model, samples, device), model, optimizer)
+    return dict(steps=steps, sampling='half repaired / half source-copy, replacement',
+                sample_index_stream_sha256=sampling_hash.hexdigest(), first_batch_indices=first_indices,
+                sole_method_change='Original imitation loss applied to exact gate-composed prediction',
+                unchanged_labels_model_optimizer_budget_and_deployment=True,
+                not_generalization=True, physical_execution_not_evaluated=True)

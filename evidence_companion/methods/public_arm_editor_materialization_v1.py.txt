@@ -1,0 +1,16 @@
+"""Materialize neural float32 latent edits against ORIGINAL float64 source data.
+Zero latent means exact original reference, not a float32-rounded initial pose.
+No simulator-state write, clipping of physical joints, or feasibility claim.
+"""
+import numpy as np
+from public_arm_editor_representation_v1 import validate_raw,decode
+
+
+def materialize(raw,rotation_delta,reference_latent):
+    x=validate_raw(raw);v=np.asarray(rotation_delta,dtype=np.float64);z=np.asarray(reference_latent,dtype=np.float64);n=len(x['source_target_poses'])
+    if z.shape!=(n,7) or not np.isfinite(z).all():raise ValueError('Finite aligned generated reference latent required')
+    lo=x['arm_bounds7'][:,0]+.02;hi=x['arm_bounds7'][:,1]-.02;q0=x['initial_reference7']
+    if np.any(q0<=lo) or np.any(q0>=hi):raise ValueError('Original initial reference must be inside unchanged guard inset')
+    d=np.tanh(z);q=q0+np.where(d>=0,hi-q0,q0-lo)*d
+    # Construct references, not robot states. Physical-range checks remain strict.
+    return decode(raw,v,q)

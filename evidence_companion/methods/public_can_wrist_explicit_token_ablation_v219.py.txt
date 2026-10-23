@@ -1,0 +1,23 @@
+"""Opt-in removal of explicit capability-token variation only.
+No model/parameter/gate/bounds/materializer edits. Not an ability-free policy.
+"""
+
+def apply_explicit_capability_mode(batch, mode, constant=None):
+    import torch
+    required={'source','context','capability','query_time','valid_mask','initial_reference','bounds'}
+    if set(batch)!=required:
+        raise ValueError('Unchanged original input schema required')
+    cap=batch['capability']
+    if cap.ndim!=2 or cap.shape[-1]!=14 or not cap.is_floating_point() or not torch.isfinite(cap).all():
+        raise ValueError('Finite original capability input [batch,14] required')
+    if mode=='original':
+        if constant is not None:raise ValueError('No hidden constant in original mode')
+        return batch
+    if mode!='train_mean_constant':raise ValueError('Only original or train_mean_constant permitted')
+    if constant is None:raise ValueError('A frozen TRAIN-only constant is required')
+    vector=torch.as_tensor(constant,device=cap.device,dtype=cap.dtype)
+    if vector.shape!=(14,) or vector.requires_grad or not torch.isfinite(vector).all():
+        raise ValueError('Fixed finite nonlearned 14-vector required')
+    replaced=dict(batch)
+    replaced['capability']=vector.detach().unsqueeze(0).expand_as(cap)
+    return replaced

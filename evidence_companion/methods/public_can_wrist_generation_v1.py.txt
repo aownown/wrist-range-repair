@@ -1,0 +1,36 @@
+"""One frozen warm-generation path for cheap/strong/learned Can wrist editors.
+Preloaded normal source/trace/initial observation and models; no target outcomes.
+"""
+import numpy as np
+from public_arm_editor_representation_v1 import features,pad_features,validate_raw
+from public_arm_editor_materialization_v1 import materialize
+from public_can_wrist_retrieval_v1 import nearest
+from public_fixed_xyz_clip_fk_v1 import compile_parent
+from public_xyz_prospective_fixed_compile_contract_v1 import source_masks
+from public_sequential_ik_projection_v1 import source_gate
+from public_arm_position_priority_ik_v1 import compile_variant,VARIANTS
+METHODS=('source_copy','clip_common_fixedXYZ','clip_guard_only_fixedXYZ','nearest_teacher',*('fixedXYZ__'+v for v in VARIANTS),'nn_seed0','nn_seed1','nn_seed2')
+
+def generate(method,context,bank=(),models=None,device='cpu'):
+    if method not in METHODS:raise ValueError('Frozen generation method')
+    raw=validate_raw(context['raw']);source=dict(target_poses=raw['source_target_poses'],gripper_commands=raw['source_gripper_commands']);n=len(source['target_poses']);q0=raw['initial_reference7'];bounds=raw['arm_bounds7'];extra={}
+    if method=='source_copy':
+        w=np.zeros(n);program=dict(target_poses=source['target_poses'].copy(),gripper_commands=source['gripper_commands'].copy(),references=np.tile(q0,(n,1)))
+    else:
+        masks=source_masks(source,context['control'],context['job'],source_gate)
+        w=masks['original_weights'] if method=='clip_guard_only_fixedXYZ' else masks['common_retarget_weights']
+        if method=='nearest_teacher':program,extra=nearest(raw,w,bank)
+        elif method.startswith('clip_'):
+            result=compile_parent(context['fk'],source,context['control']['q'][::25],q0,bounds,w);program=result['program'];extra={'logical_FK_queries':result['logical_method_FK_queries']}
+        elif method.startswith('fixedXYZ__'):
+            program,details,records=compile_variant(context['fk'],source['target_poses'],source['gripper_commands'],context['control']['q'][::25],q0,bounds,masks['original_need'],w,method.removeprefix('fixedXYZ__'))
+            extra={'logical_FK_queries':sum(r['forward_queries'] for r in records),'all_solver_starts_and_failures_included':True}
+        else:
+            import torch
+            if models is None or method not in models:raise ValueError('Frozen loaded weights required')
+            batch={k:torch.from_numpy(a).to(device) for k,a in pad_features([features(raw)]).items()}
+            with torch.inference_mode():pred=models[method](batch)
+            v=pred['rotation_delta'][0,:n].cpu().numpy();z=pred['reference_latent'][0,:n].cpu().numpy();program=materialize(raw,v.astype(np.float64)*w[:,None],z.astype(np.float64)*w[:,None]);extra={'raw_rotation_delta':v,'raw_reference_latent':z,'device':str(device)}
+    from public_can_wrist_fast_execution_plan_v1 import fixed_context
+    contract=fixed_context(program,source,q0,bounds,w)
+    return program,dict(weights=w,compiled_context=contract,**extra)

@@ -1,0 +1,58 @@
+"""Frozen raw/current-protocol source-only qualification, no capability repair."""
+import fcntl,os,socket,sys,json
+from pathlib import Path
+import numpy as np,h5py,mujoco,robosuite
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/x) for x in ('scripts','sim','learning')]
+from public_native_dev_runtime_v1 import read,sha,publish,idle_now
+NS='public_arm_loop_source_replay_v1'
+
+
+def load_plan(path):
+    p=read(path)
+    if p['schema']!=NS or sha(path)!=(Path(path).parent/'plan.sha256').read_text().split()[0]:raise ValueError('Sealed source replay plan required')
+    if p['expected_episodes']!=12 or p['expected_actual_physics_steps']!=24950 or p['target_repair_authorized'] or p['training_authorized'] or p['formal_test']:raise ValueError('Twelve source-only fixed trials required')
+    if (np.__version__,mujoco.__version__,robosuite.__version__)!=('1.26.4','2.3.2','1.4.1'):raise ValueError('Pinned stack only')
+    for f,h in p['code_sha256'].items():
+        if sha(ROOT/f)!=h:raise ValueError('Frozen source changed '+f)
+    for item in p['dependencies']:
+        if sha(item['path'])!=item['sha256']:raise ValueError('Frozen source dependency changed')
+    part=read(p['partition_path']);taskmap={t['task']:t for t in part['tasks']}
+    for j in p['jobs']:
+        t=taskmap[j['task']]
+        if j['episode_id'] not in t['development_replay_sources'] or j['episode_id'] not in t['TRAIN'] or j['episode_id'] in t['VAL']+t['TEST'] or j['mode'] not in ('raw_source','current_guard') or j['hdf5_path']!=t['hdf5_path']:raise ValueError('Fixed pre-outcome TRAIN sources only')
+    return p
+
+
+def claim(p,pp,stage):
+    lock=open('/tmp/capability_recomposition_20260930_cpu_slot.lock','a+');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB);idle=idle_now()
+    if not idle['eligible'] or socket.gethostname()!=p['physical_hostname'] or os.environ.get('CUDA_VISIBLE_DEVICES')!='' or any(os.environ.get(k)!='1' for k in ('OPENBLAS_NUM_THREADS','OMP_NUM_THREADS','MKL_NUM_THREADS','NUMBA_NUM_THREADS','NUMEXPR_NUM_THREADS')):raise ValueError('Fresh idle assigned CPU source worker required')
+    out=Path(p['output_directory'])/stage;out.mkdir(parents=True,exist_ok=False)
+    publish(out/'owner.json',dict(pid=os.getpid(),host=socket.gethostname(),boot_id=Path('/proc/sys/kernel/random/boot_id').read_text().strip(),proc_stat=Path('/proc/self/stat').read_text(),plan_sha256=sha(pp),fresh_idle=idle))
+    return out,lock
+
+
+def source_payload(j):
+    with h5py.File(j['hdf5_path'],'r') as f:
+        g=f['data'][j['episode_id']];actions=g['actions'][:];initial=g['states'][0];xml=g.attrs['model_file'];args=json.loads(f['data'].attrs['env_args'])
+    if actions.shape!=(j['policy_actions'],7) or not np.isfinite(actions).all() or args!=j['env_args']:raise ValueError('Declared original TRAIN source schema differs')
+    return actions,initial,xml,args
+
+
+def make_env(args,xml,initial):
+    kwargs=dict(args['env_kwargs']);kwargs.update(has_renderer=False,has_offscreen_renderer=False,use_camera_obs=False)
+    np.random.seed(0);env=robosuite.make(args['env_name'],**kwargs);env.reset();xml=env.edit_model_xml(xml)
+    env.reset_from_xml_string(xml);env.sim.reset();env.sim.set_state_from_flattened(initial);env.sim.forward()
+    restored=np.asarray(env.sim.get_state().flatten())
+    if restored.shape!=initial.shape or np.max(abs(restored-initial))>1e-12:raise ValueError('Original source initial state restore differs')
+    return env,xml
+
+
+def object_info(env,task):
+    obj=env.cube if task=='lift' else env.objects[env.object_id]
+    bid=env.sim.model.body_name2id(obj.root_body)
+    return dict(grasp=bool(env._check_grasp(gripper=env.robots[0].gripper,object_geoms=obj)),
+        object_name=obj.name,position=np.asarray(env.sim.data.body_xpos[bid]).tolist(),
+        quaternion_wxyz=np.asarray(env.sim.data.body_xquat[bid]).tolist())
+
+
+def forbidden(*a,**k):raise RuntimeError('No unbudgeted/split native stepping')

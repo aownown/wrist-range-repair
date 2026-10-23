@@ -1,0 +1,72 @@
+"""Source-only gated sequential IK baseline; never edits physical simulator state.
+
+This is a kinematic candidate generator, not collision-aware planning or a learned
+method. Only nominal source replay + explicit bounds are inputs, never a target
+rollout or task-success label. Parameters are prospectively fixed in CONFIG.
+"""
+import numpy as np
+from scipy.optimize import least_squares
+from scipy.spatial.transform import Rotation
+CONFIG=dict(arm_inset_rad=.02,orientation_weight_m_per_rad=.05,
+            temporal_weight_m_per_rad=.002,max_nfev=40,ftol=1e-8,xtol=1e-8,
+            gtol=1e-8,guard_alpha=50.,guard_tolerance=1e-10,padding_actions=5)
+VARIANTS=('reference_only','orientation_and_reference')
+
+def source_gate(q,dq,a0,bounds,joint_index):
+ q,dq,a0,b=np.asarray(q,float),np.asarray(dq,float),np.asarray(a0,float),np.asarray(bounds,float)
+ if q.shape!=dq.shape or q.shape!=a0.shape or q.ndim!=2 or q.shape[1]!=7 or len(q)%25 or b.shape!=(7,2) or not all(np.isfinite(x).all() for x in (q,dq,a0,b)) or np.any(b[:,0]>=b[:,1]):raise ValueError('Finite complete nominal source controls and bounds required')
+ n=len(q)//25;need=np.zeros(n,bool)
+ if joint_index is not None:
+  if joint_index not in range(7):raise ValueError('Declared arm joint only')
+  i=joint_index;lo=-2*np.sqrt(CONFIG['guard_alpha'])*dq[:,i]-CONFIG['guard_alpha']*(q[:,i]-(b[i,0]+CONFIG['arm_inset_rad']))
+  hi=-2*np.sqrt(CONFIG['guard_alpha'])*dq[:,i]+CONFIG['guard_alpha']*((b[i,1]-CONFIG['arm_inset_rad'])-q[:,i])
+  need=((a0[:,i]<lo-CONFIG['guard_tolerance'])|(a0[:,i]>hi+CONFIG['guard_tolerance'])).reshape(n,25).any(axis=1)
+ weights=np.zeros(n);p=CONFIG['padding_actions']
+ for action in np.flatnonzero(need):
+  for i in range(max(0,action-p),min(n,action+p+1)):
+   weights[i]=max(weights[i],1.-abs(i-action)/(p+1.))
+ return need,weights
+
+def solve(fk,target,seed,bounds,previous):
+ b=np.asarray(bounds,float);seed=np.asarray(seed,float);prev=np.asarray(previous,float);target=np.asarray(target,float)
+ if b.shape!=(7,2) or seed.shape!=(7,) or prev.shape!=(7,) or target.shape!=(4,4) or np.any(b[:,0]>=b[:,1]) or not all(np.isfinite(x).all() for x in (b,seed,prev,target)):raise ValueError('Finite feasible IK problem required')
+ calls=0
+ def evaluate(q):
+  nonlocal calls
+  pose=np.asarray(fk(q),float);calls+=1
+  if pose.shape!=(4,4) or not np.isfinite(pose).all():raise ValueError('Finite native FK pose required')
+  position=pose[:3,3]-target[:3,3];rotation=Rotation.from_matrix(target[:3,:3].T@pose[:3,:3]).as_rotvec()
+  return pose,position,rotation
+ def residual(q):
+  _,position,rotation=evaluate(q)
+  return np.r_[position,CONFIG['orientation_weight_m_per_rad']*rotation,CONFIG['temporal_weight_m_per_rad']*(q-prev)]
+ # Seed clipping is confined to this private numerical problem, never qpos.
+ x0=np.minimum(np.maximum(seed,b[:,0]+1e-9),b[:,1]-1e-9)
+ opt=least_squares(residual,x0,bounds=(b[:,0],b[:,1]),max_nfev=CONFIG['max_nfev'],ftol=CONFIG['ftol'],xtol=CONFIG['xtol'],gtol=CONFIG['gtol'])
+ pose,pos,rot=evaluate(opt.x)
+ if not np.isfinite(opt.x).all() or np.any(opt.x<b[:,0]) or np.any(opt.x>b[:,1]):raise ValueError('Finite in-bound numerical solution required')
+ return opt.x,pose,dict(position_error_m=float(np.linalg.norm(pos)),orientation_error_rad=float(np.linalg.norm(rot)),optimizer_status=int(opt.status),nfev=int(opt.nfev),forward_queries=calls,cost=float(opt.cost),solver_success=bool(opt.success),not_reachability_or_dynamics_proof=True)
+
+def compile_program(fk,source_poses,source_controls,initial_reference,bounds,joint_index):
+ poses=np.asarray(source_poses,float);q0=np.asarray(initial_reference,float);b=np.asarray(bounds,float);n=len(poses)
+ if n<1 or poses.shape!=(n,4,4) or q0.shape!=(7,) or not np.isfinite(poses).all() or not np.isfinite(q0).all():raise ValueError('Complete finite source pose program required')
+ if not np.allclose(poses[:,3,:],[0,0,0,1],rtol=0,atol=1e-12) or not np.allclose(np.swapaxes(poses[:,:3,:3],1,2)@poses[:,:3,:3],np.eye(3),rtol=0,atol=1e-6) or np.any(np.linalg.det(poses[:,:3,:3])<.999999):raise ValueError('Rigid original source targets required')
+ need,weights=source_gate(source_controls['q'],source_controls['dq'],source_controls['filter_nominal_acceleration'],b,joint_index)
+ if len(weights)!=n:raise ValueError('Source action/physics alignment required')
+ inner=b.copy();inner[:,0]+=CONFIG['arm_inset_rad'];inner[:,1]-=CONFIG['arm_inset_rad']
+ if np.any(inner[:,0]>=inner[:,1]) or np.any(q0<inner[:,0]) or np.any(q0>inner[:,1]):raise ValueError('Unmodified initial reference must lie inside existing guard margin')
+ solution=np.repeat(q0[None],n,axis=0);fk_poses=poses.copy();rows=[];previous=None
+ for i in range(n):
+  if weights[i]==0:previous=None;continue
+  nominal=np.asarray(source_controls['q'][i*25]);seed=nominal if previous is None else previous
+  regularizer=np.clip(nominal,inner[:,0],inner[:,1]) if previous is None else previous
+  qi,pose,record=solve(fk,poses[i],seed,inner,regularizer)
+  solution[i]=qi;fk_poses[i]=pose;rows.append(dict(action_index=i,**record));previous=qi.copy()
+ reference=np.repeat(q0[None],n,axis=0);edited=poses.copy()
+ for i,w in enumerate(weights):
+  if w==0:continue
+  reference[i]=q0+w*(solution[i]-q0)
+  delta=Rotation.from_matrix(poses[i,:3,:3].T@fk_poses[i,:3,:3]).as_rotvec()
+  edited[i,:3,:3]=poses[i,:3,:3]@Rotation.from_rotvec(w*delta).as_matrix()
+ if np.any(reference<b[:,0]) or np.any(reference>b[:,1]):raise ValueError('Convex virtual reference must remain legal; no clipping')
+ return dict(reference_only=dict(target_poses=poses.copy(),references=reference.copy()),orientation_and_reference=dict(target_poses=edited,references=reference.copy())),dict(source_guard_need=need,weights=weights,ik_solution=solution,ik_fk_poses=fk_poses),rows
