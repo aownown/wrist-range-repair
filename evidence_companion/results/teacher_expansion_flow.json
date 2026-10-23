@@ -1,0 +1,34 @@
+{
+  "source_sha256": "3559e22f98bef69888acec290c2edcf37795a8ddbbb942b85c26b18c21f1aac7",
+  "nominal_expansion_sources": 12,
+  "nominal_expansion_conditions": 36,
+  "normal_NA_sources": [
+    "demo_185",
+    "demo_102"
+  ],
+  "normal_NA_conditions": 6,
+  "normal_qualified_conditions": 30,
+  "accepted_new_teachers": 23,
+  "no_teacher_conditions": 7,
+  "no_teacher_context_ids": [
+    "new_train12__can__demo_117__wrist7_medium",
+    "new_train12__can__demo_142__wrist7_tight",
+    "new_train12__can__demo_142__wrist7_medium",
+    "new_train12__can__demo_142__wrist7_mild",
+    "new_train12__can__demo_156__wrist7_tight",
+    "new_train12__can__demo_156__wrist7_medium",
+    "new_train12__can__demo_156__wrist7_mild"
+  ],
+  "new_selected_method_counts": {
+    "fixedXYZ__old_weight_multistart": 17,
+    "fixedXYZ__free_orientation_multistart": 1,
+    "source_copy": 5
+  },
+  "old_selected_teachers": 36,
+  "old_attempted_denominator": "not reported in the supplied construction record; not inferred",
+  "final_selected_teachers": 59,
+  "retained_contributing_sources": 20,
+  "repair_teachers": 49,
+  "identity_teachers": 10,
+  "new_selection": false
+}

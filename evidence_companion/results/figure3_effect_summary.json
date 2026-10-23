@@ -1,0 +1,17 @@
+{
+  "sha256": "8a6f55e5a984bda9a87b3d00ad5db0c24c32ba04b391e84b3721576bcc6af695",
+  "protocol_sha256": "cef452cf3f868686267ec5447b4d33c86158b7da15198370c60687b2f70a5fa0",
+  "mean_rate": 0.08,
+  "source_cluster_interval_rate": [
+    -0.06,
+    0.2333333333333333
+  ],
+  "mean_success_difference_per_source": 0.4,
+  "interval_in_success_per_source": [
+    -0.3,
+    1.1666666666666665
+  ],
+  "display_group_order": "numeric source id; existing values only",
+  "new_resampling": false,
+  "all_methods_and_groups_retained": true
+}

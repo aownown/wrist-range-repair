@@ -1,0 +1,2521 @@
+[
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_tight",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 42,
+      "first_original_physical_field_difference_step": 100,
+      "original_physical_different_steps": 950,
+      "first_original_state_or_motor_difference_step": 100,
+      "original_state_or_motor_different_steps": 950,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1050,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": false,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": 100,
+      "specified_joint_guard_needed_original_steps": 950,
+      "specified_joint_guard_needed_total_steps": 1950,
+      "any_arm_filter_torque_changed_original_steps": 950,
+      "any_arm_filter_torque_changed_total_steps": 1950,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_tight",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_tight",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_tight",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_tight",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_tight",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_tight",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_tight",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_tight",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_tight",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_medium",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 42,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1050,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_medium",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_medium",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_medium",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_medium",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_medium",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_medium",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_medium",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_medium",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_medium",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_mild",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 42,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1050,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_mild",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_mild",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_mild",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_mild",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_mild",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_mild",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_mild",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_mild",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_69__wrist7_mild",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_tight",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 53,
+      "first_original_physical_field_difference_step": 200,
+      "original_physical_different_steps": 1125,
+      "first_original_state_or_motor_difference_step": 200,
+      "original_state_or_motor_different_steps": 1125,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1325,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": false,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": 200,
+      "specified_joint_guard_needed_original_steps": 1125,
+      "specified_joint_guard_needed_total_steps": 2125,
+      "any_arm_filter_torque_changed_original_steps": 1125,
+      "any_arm_filter_torque_changed_total_steps": 2125,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_tight",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_tight",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_tight",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_tight",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_tight",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_tight",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_tight",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_tight",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_tight",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_medium",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 53,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1325,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_medium",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_medium",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_medium",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_medium",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_medium",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_medium",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_medium",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_medium",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_medium",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_mild",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 53,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1325,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_mild",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_mild",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_mild",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_mild",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_mild",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_mild",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_mild",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_mild",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_84__wrist7_mild",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_tight",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 43,
+      "first_original_physical_field_difference_step": 350,
+      "original_physical_different_steps": 725,
+      "first_original_state_or_motor_difference_step": 350,
+      "original_state_or_motor_different_steps": 725,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1075,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": false,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": 350,
+      "specified_joint_guard_needed_original_steps": 506,
+      "specified_joint_guard_needed_total_steps": 1506,
+      "any_arm_filter_torque_changed_original_steps": 506,
+      "any_arm_filter_torque_changed_total_steps": 1506,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_tight",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_tight",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_tight",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_tight",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_tight",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_tight",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_tight",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_tight",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_tight",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_medium",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 43,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1075,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_medium",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_medium",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_medium",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_medium",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_medium",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_medium",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_medium",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_medium",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_medium",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_mild",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 43,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1075,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_mild",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_mild",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_mild",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_mild",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_mild",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_mild",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_mild",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_mild",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_54__wrist7_mild",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_tight",
+    "method": "source_copy",
+    "bad_joints": [
+      {
+        "joint": "gripper0_finger_joint2",
+        "range": [
+          -0.04,
+          0.0
+        ],
+        "units": "m",
+        "maximum_positive_excess": 0.00017176162322742744,
+        "steps_above_1e_9": 41,
+        "by_phase": {
+          "whole_episode": {
+            "maximum_positive_excess": 0.00017176162322742744,
+            "steps_above_1e_9": 41
+          }
+        }
+      }
+    ],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 53,
+      "first_original_physical_field_difference_step": 200,
+      "original_physical_different_steps": 1125,
+      "first_original_state_or_motor_difference_step": 200,
+      "original_state_or_motor_different_steps": 1125,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1325,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": false,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": 200,
+      "specified_joint_guard_needed_original_steps": 1112,
+      "specified_joint_guard_needed_total_steps": 2112,
+      "any_arm_filter_torque_changed_original_steps": 1112,
+      "any_arm_filter_torque_changed_total_steps": 2112,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_tight",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_tight",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_tight",
+    "method": "nearest_teacher",
+    "bad_joints": [
+      {
+        "joint": "gripper0_finger_joint2",
+        "range": [
+          -0.04,
+          0.0
+        ],
+        "units": "m",
+        "maximum_positive_excess": 0.00017176162322742744,
+        "steps_above_1e_9": 41,
+        "by_phase": {
+          "whole_episode": {
+            "maximum_positive_excess": 0.00017176162322742744,
+            "steps_above_1e_9": 41
+          }
+        }
+      }
+    ],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_tight",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_tight",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_tight",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_tight",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_tight",
+    "method": "nn_seed1",
+    "bad_joints": [
+      {
+        "joint": "gripper0_finger_joint2",
+        "range": [
+          -0.04,
+          0.0
+        ],
+        "units": "m",
+        "maximum_positive_excess": 0.00017236211709788923,
+        "steps_above_1e_9": 30,
+        "by_phase": {
+          "whole_episode": {
+            "maximum_positive_excess": 0.00017236211709788923,
+            "steps_above_1e_9": 30
+          }
+        }
+      }
+    ],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_tight",
+    "method": "nn_seed2",
+    "bad_joints": [
+      {
+        "joint": "gripper0_finger_joint2",
+        "range": [
+          -0.04,
+          0.0
+        ],
+        "units": "m",
+        "maximum_positive_excess": 8.306289587129562e-05,
+        "steps_above_1e_9": 46,
+        "by_phase": {
+          "whole_episode": {
+            "maximum_positive_excess": 8.306289587129562e-05,
+            "steps_above_1e_9": 46
+          }
+        }
+      }
+    ],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_medium",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 53,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1325,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_medium",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_medium",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_medium",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_medium",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_medium",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_medium",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_medium",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_medium",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_medium",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_mild",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 53,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1325,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_mild",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_mild",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_mild",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_mild",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_mild",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_mild",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_mild",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_mild",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_183__wrist7_mild",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_tight",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 49,
+      "first_original_physical_field_difference_step": 525,
+      "original_physical_different_steps": 700,
+      "first_original_state_or_motor_difference_step": 525,
+      "original_state_or_motor_different_steps": 700,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1225,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": false,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": 525,
+      "specified_joint_guard_needed_original_steps": 600,
+      "specified_joint_guard_needed_total_steps": 1466,
+      "any_arm_filter_torque_changed_original_steps": 600,
+      "any_arm_filter_torque_changed_total_steps": 1466,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_tight",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_tight",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_tight",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_tight",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_tight",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_tight",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_tight",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_tight",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_tight",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_medium",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 49,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1225,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_medium",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_medium",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_medium",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_medium",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_medium",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_medium",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_medium",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_medium",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_medium",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_mild",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 49,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1225,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_mild",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_mild",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_mild",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_mild",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_mild",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_mild",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_mild",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_mild",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_18__wrist7_mild",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_tight",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 45,
+      "first_original_physical_field_difference_step": 105,
+      "original_physical_different_steps": 1020,
+      "first_original_state_or_motor_difference_step": 105,
+      "original_state_or_motor_different_steps": 1020,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1125,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": false,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": 105,
+      "specified_joint_guard_needed_original_steps": 912,
+      "specified_joint_guard_needed_total_steps": 1912,
+      "any_arm_filter_torque_changed_original_steps": 912,
+      "any_arm_filter_torque_changed_total_steps": 1912,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_tight",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_tight",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_tight",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_tight",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_tight",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_tight",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_tight",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_tight",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_tight",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_medium",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 45,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1125,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_medium",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_medium",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_medium",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_medium",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_medium",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_medium",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_medium",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_medium",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_medium",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_mild",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 45,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1125,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_mild",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_mild",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_mild",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_mild",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_mild",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_mild",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_mild",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_mild",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_71__wrist7_mild",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_tight",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 45,
+      "first_original_physical_field_difference_step": 600,
+      "original_physical_different_steps": 525,
+      "first_original_state_or_motor_difference_step": 600,
+      "original_state_or_motor_different_steps": 525,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1125,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": false,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": 600,
+      "specified_joint_guard_needed_original_steps": 325,
+      "specified_joint_guard_needed_total_steps": 325,
+      "any_arm_filter_torque_changed_original_steps": 325,
+      "any_arm_filter_torque_changed_total_steps": 325,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_tight",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_tight",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_tight",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_tight",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_tight",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_tight",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_tight",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_tight",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_tight",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_medium",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 45,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1125,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_medium",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_medium",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_medium",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_medium",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_medium",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_medium",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_medium",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_medium",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_medium",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_mild",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 45,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1125,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_mild",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_mild",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_mild",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_mild",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_mild",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_mild",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_mild",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_mild",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_186__wrist7_mild",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_tight",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 46,
+      "first_original_physical_field_difference_step": 300,
+      "original_physical_different_steps": 850,
+      "first_original_state_or_motor_difference_step": 300,
+      "original_state_or_motor_different_steps": 850,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1150,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": false,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": 300,
+      "specified_joint_guard_needed_original_steps": 813,
+      "specified_joint_guard_needed_total_steps": 1813,
+      "any_arm_filter_torque_changed_original_steps": 813,
+      "any_arm_filter_torque_changed_total_steps": 1813,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_tight",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_tight",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_tight",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_tight",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_tight",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_tight",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_tight",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_tight",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_tight",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_medium",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 46,
+      "first_original_physical_field_difference_step": 649,
+      "original_physical_different_steps": 501,
+      "first_original_state_or_motor_difference_step": 649,
+      "original_state_or_motor_different_steps": 501,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1150,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": false,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": 649,
+      "specified_joint_guard_needed_original_steps": 376,
+      "specified_joint_guard_needed_total_steps": 376,
+      "any_arm_filter_torque_changed_original_steps": 376,
+      "any_arm_filter_torque_changed_total_steps": 376,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_medium",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [
+      {
+        "joint": "gripper0_finger_joint2",
+        "range": [
+          -0.04,
+          0.0
+        ],
+        "units": "m",
+        "maximum_positive_excess": 0.00035335505243808824,
+        "steps_above_1e_9": 94,
+        "by_phase": {
+          "whole_episode": {
+            "maximum_positive_excess": 0.00035335505243808824,
+            "steps_above_1e_9": 94
+          }
+        }
+      }
+    ],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_medium",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [
+      {
+        "joint": "gripper0_finger_joint2",
+        "range": [
+          -0.04,
+          0.0
+        ],
+        "units": "m",
+        "maximum_positive_excess": 0.00035335505243808824,
+        "steps_above_1e_9": 94,
+        "by_phase": {
+          "whole_episode": {
+            "maximum_positive_excess": 0.00035335505243808824,
+            "steps_above_1e_9": 94
+          }
+        }
+      }
+    ],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_medium",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_medium",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_medium",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_medium",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [
+      {
+        "joint": "gripper0_finger_joint2",
+        "range": [
+          -0.04,
+          0.0
+        ],
+        "units": "m",
+        "maximum_positive_excess": 0.0003508467427310452,
+        "steps_above_1e_9": 74,
+        "by_phase": {
+          "whole_episode": {
+            "maximum_positive_excess": 0.0003508467427310452,
+            "steps_above_1e_9": 74
+          }
+        }
+      }
+    ],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_medium",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_medium",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_medium",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_mild",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 46,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1150,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_mild",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_mild",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_mild",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_mild",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_mild",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_mild",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_mild",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_mild",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_99__wrist7_mild",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_tight",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 51,
+      "first_original_physical_field_difference_step": 45,
+      "original_physical_different_steps": 1230,
+      "first_original_state_or_motor_difference_step": 45,
+      "original_state_or_motor_different_steps": 1230,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1275,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": false,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": 45,
+      "specified_joint_guard_needed_original_steps": 912,
+      "specified_joint_guard_needed_total_steps": 1912,
+      "any_arm_filter_torque_changed_original_steps": 912,
+      "any_arm_filter_torque_changed_total_steps": 1912,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_tight",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_tight",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_tight",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_tight",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_tight",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_tight",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_tight",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_tight",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_tight",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_medium",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 51,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1275,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_medium",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_medium",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_medium",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_medium",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_medium",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_medium",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_medium",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_medium",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_medium",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_mild",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 51,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1275,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_mild",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_mild",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_mild",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_mild",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_mild",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_mild",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_mild",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_mild",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_166__wrist7_mild",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_tight",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 58,
+      "first_original_physical_field_difference_step": 200,
+      "original_physical_different_steps": 1250,
+      "first_original_state_or_motor_difference_step": 200,
+      "original_state_or_motor_different_steps": 1250,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1450,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": false,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": 200,
+      "specified_joint_guard_needed_original_steps": 1250,
+      "specified_joint_guard_needed_total_steps": 2250,
+      "any_arm_filter_torque_changed_original_steps": 1250,
+      "any_arm_filter_torque_changed_total_steps": 2250,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_tight",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_tight",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_tight",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_tight",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_tight",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_tight",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_tight",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_tight",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_tight",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_medium",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 58,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1450,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_medium",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_medium",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_medium",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_medium",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_medium",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_medium",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_medium",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_medium",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_medium",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_mild",
+    "method": "source_copy",
+    "bad_joints": [],
+    "paired_normal_source": {
+      "full_initial_state_bit_exact": true,
+      "source_policy_actions": 58,
+      "first_original_physical_field_difference_step": null,
+      "original_physical_different_steps": 0,
+      "first_original_state_or_motor_difference_step": null,
+      "original_state_or_motor_different_steps": 0,
+      "first_original_controller_field_difference_step": 0,
+      "original_controller_different_steps": 1450,
+      "controller_bound_changes_alone_not_action_change": true,
+      "all_original_physical_fields_bit_exact": true,
+      "all_original_controller_fields_bit_exact": false,
+      "first_specified_joint_guard_need_step": null,
+      "specified_joint_guard_needed_original_steps": 0,
+      "specified_joint_guard_needed_total_steps": 0,
+      "any_arm_filter_torque_changed_original_steps": 0,
+      "any_arm_filter_torque_changed_total_steps": 0,
+      "guard_need_not_native_limit_contact_count": true,
+      "normal_source_qualified": true,
+      "normal_source_failure_not_attributed_to_capability": false
+    }
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_mild",
+    "method": "clip_common_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_mild",
+    "method": "clip_guard_only_fixedXYZ",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_mild",
+    "method": "nearest_teacher",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_mild",
+    "method": "fixedXYZ__old_weight_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_mild",
+    "method": "fixedXYZ__position_priority_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_mild",
+    "method": "fixedXYZ__free_orientation_multistart",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_mild",
+    "method": "nn_seed0",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_mild",
+    "method": "nn_seed1",
+    "bad_joints": [],
+    "paired_normal_source": null
+  },
+  {
+    "context_id": "TEST_lift_v493__demo_127__wrist7_mild",
+    "method": "nn_seed2",
+    "bad_joints": [],
+    "paired_normal_source": null
+  }
+]

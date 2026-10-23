@@ -1,0 +1,270 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "method": "source_copy",
+      "conditions": 30,
+      "strict_original_count": 28,
+      "strict_extended_count": 28,
+      "native_goal_original_count": 30,
+      "native_goal_extended_count": 30,
+      "repair_original_count": 0,
+      "repair_original_denominator": 2,
+      "damage_original_count": 0,
+      "damage_original_denominator": 28,
+      "finger_range_failure_cells": 1,
+      "arm_range_failure_cells": 0,
+      "carry_failure_cells": 2,
+      "median_of30_context_median_warm_generation_ms": 0.5089090000000001,
+      "repair_conditions": [],
+      "damage_conditions": []
+    },
+    {
+      "method": "clip_common_fixedXYZ",
+      "conditions": 30,
+      "strict_original_count": 29,
+      "strict_extended_count": 29,
+      "native_goal_original_count": 30,
+      "native_goal_extended_count": 29,
+      "repair_original_count": 2,
+      "repair_original_denominator": 2,
+      "damage_original_count": 1,
+      "damage_original_denominator": 28,
+      "finger_range_failure_cells": 1,
+      "arm_range_failure_cells": 0,
+      "carry_failure_cells": 1,
+      "median_of30_context_median_warm_generation_ms": 1.86172,
+      "repair_conditions": [
+        [
+          "demo_183",
+          "wrist7_tight"
+        ],
+        [
+          "demo_127",
+          "wrist7_tight"
+        ]
+      ],
+      "damage_conditions": [
+        [
+          "demo_99",
+          "wrist7_medium"
+        ]
+      ]
+    },
+    {
+      "method": "clip_guard_only_fixedXYZ",
+      "conditions": 30,
+      "strict_original_count": 29,
+      "strict_extended_count": 29,
+      "native_goal_original_count": 30,
+      "native_goal_extended_count": 29,
+      "repair_original_count": 2,
+      "repair_original_denominator": 2,
+      "damage_original_count": 1,
+      "damage_original_denominator": 28,
+      "finger_range_failure_cells": 1,
+      "arm_range_failure_cells": 0,
+      "carry_failure_cells": 1,
+      "median_of30_context_median_warm_generation_ms": 0.732212,
+      "repair_conditions": [
+        [
+          "demo_183",
+          "wrist7_tight"
+        ],
+        [
+          "demo_127",
+          "wrist7_tight"
+        ]
+      ],
+      "damage_conditions": [
+        [
+          "demo_99",
+          "wrist7_medium"
+        ]
+      ]
+    },
+    {
+      "method": "nearest_teacher",
+      "conditions": 30,
+      "strict_original_count": 29,
+      "strict_extended_count": 29,
+      "native_goal_original_count": 30,
+      "native_goal_extended_count": 30,
+      "repair_original_count": 1,
+      "repair_original_denominator": 2,
+      "damage_original_count": 0,
+      "damage_original_denominator": 28,
+      "finger_range_failure_cells": 1,
+      "arm_range_failure_cells": 0,
+      "carry_failure_cells": 1,
+      "median_of30_context_median_warm_generation_ms": 1.5015185,
+      "repair_conditions": [
+        [
+          "demo_127",
+          "wrist7_tight"
+        ]
+      ],
+      "damage_conditions": []
+    },
+    {
+      "method": "fixedXYZ__old_weight_multistart",
+      "conditions": 30,
+      "strict_original_count": 30,
+      "strict_extended_count": 30,
+      "native_goal_original_count": 30,
+      "native_goal_extended_count": 30,
+      "repair_original_count": 2,
+      "repair_original_denominator": 2,
+      "damage_original_count": 0,
+      "damage_original_denominator": 28,
+      "finger_range_failure_cells": 0,
+      "arm_range_failure_cells": 0,
+      "carry_failure_cells": 0,
+      "median_of30_context_median_warm_generation_ms": 233.5685225,
+      "repair_conditions": [
+        [
+          "demo_183",
+          "wrist7_tight"
+        ],
+        [
+          "demo_127",
+          "wrist7_tight"
+        ]
+      ],
+      "damage_conditions": []
+    },
+    {
+      "method": "fixedXYZ__position_priority_multistart",
+      "conditions": 30,
+      "strict_original_count": 30,
+      "strict_extended_count": 30,
+      "native_goal_original_count": 30,
+      "native_goal_extended_count": 30,
+      "repair_original_count": 2,
+      "repair_original_denominator": 2,
+      "damage_original_count": 0,
+      "damage_original_denominator": 28,
+      "finger_range_failure_cells": 0,
+      "arm_range_failure_cells": 0,
+      "carry_failure_cells": 0,
+      "median_of30_context_median_warm_generation_ms": 299.64441850000003,
+      "repair_conditions": [
+        [
+          "demo_183",
+          "wrist7_tight"
+        ],
+        [
+          "demo_127",
+          "wrist7_tight"
+        ]
+      ],
+      "damage_conditions": []
+    },
+    {
+      "method": "fixedXYZ__free_orientation_multistart",
+      "conditions": 30,
+      "strict_original_count": 29,
+      "strict_extended_count": 29,
+      "native_goal_original_count": 30,
+      "native_goal_extended_count": 29,
+      "repair_original_count": 2,
+      "repair_original_denominator": 2,
+      "damage_original_count": 1,
+      "damage_original_denominator": 28,
+      "finger_range_failure_cells": 1,
+      "arm_range_failure_cells": 0,
+      "carry_failure_cells": 1,
+      "median_of30_context_median_warm_generation_ms": 322.32619850000003,
+      "repair_conditions": [
+        [
+          "demo_183",
+          "wrist7_tight"
+        ],
+        [
+          "demo_127",
+          "wrist7_tight"
+        ]
+      ],
+      "damage_conditions": [
+        [
+          "demo_99",
+          "wrist7_medium"
+        ]
+      ]
+    },
+    {
+      "method": "nn_seed0",
+      "conditions": 30,
+      "strict_original_count": 29,
+      "strict_extended_count": 29,
+      "native_goal_original_count": 30,
+      "native_goal_extended_count": 30,
+      "repair_original_count": 1,
+      "repair_original_denominator": 2,
+      "damage_original_count": 0,
+      "damage_original_denominator": 28,
+      "finger_range_failure_cells": 0,
+      "arm_range_failure_cells": 0,
+      "carry_failure_cells": 1,
+      "median_of30_context_median_warm_generation_ms": 4.7035295,
+      "repair_conditions": [
+        [
+          "demo_127",
+          "wrist7_tight"
+        ]
+      ],
+      "damage_conditions": []
+    },
+    {
+      "method": "nn_seed1",
+      "conditions": 30,
+      "strict_original_count": 29,
+      "strict_extended_count": 29,
+      "native_goal_original_count": 30,
+      "native_goal_extended_count": 30,
+      "repair_original_count": 1,
+      "repair_original_denominator": 2,
+      "damage_original_count": 0,
+      "damage_original_denominator": 28,
+      "finger_range_failure_cells": 1,
+      "arm_range_failure_cells": 0,
+      "carry_failure_cells": 1,
+      "median_of30_context_median_warm_generation_ms": 4.305392,
+      "repair_conditions": [
+        [
+          "demo_127",
+          "wrist7_tight"
+        ]
+      ],
+      "damage_conditions": []
+    },
+    {
+      "method": "nn_seed2",
+      "conditions": 30,
+      "strict_original_count": 29,
+      "strict_extended_count": 29,
+      "native_goal_original_count": 30,
+      "native_goal_extended_count": 30,
+      "repair_original_count": 1,
+      "repair_original_denominator": 2,
+      "damage_original_count": 0,
+      "damage_original_denominator": 28,
+      "finger_range_failure_cells": 1,
+      "arm_range_failure_cells": 0,
+      "carry_failure_cells": 1,
+      "median_of30_context_median_warm_generation_ms": 4.211755500000001,
+      "repair_conditions": [
+        [
+          "demo_127",
+          "wrist7_tight"
+        ]
+      ],
+      "damage_conditions": []
+    }
+  ],
+  "source_units": 10,
+  "original_and_plus40_all300_strict_scores_identical": true,
+  "endpoint_goal_not_sufficient_for_strict_success": true,
+  "damage_is_task_success_degradation_not_physical_hardware_damage": true,
+  "low_failure_cohort_size": 2
+}

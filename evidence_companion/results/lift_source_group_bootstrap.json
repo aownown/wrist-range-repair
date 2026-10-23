@@ -1,0 +1,420 @@
+{
+  "complete": true,
+  "seed": 20261010,
+  "draws": 10000,
+  "independent_source_unit": 10,
+  "methods": [
+    {
+      "method": "source_copy",
+      "strict_success_rate": {
+        "percentile95": [
+          0.8333333333333334,
+          1.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_source": {
+        "percentile95": [
+          0.0,
+          0.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_old_geometry": {
+        "percentile95": [
+          -0.16666666666666666,
+          0.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "repair_rate_among_defined_bootstraps": {
+        "percentile95": [
+          0.0,
+          0.0
+        ],
+        "defined_draws": 8922,
+        "undefined_draws": 1078,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "seed_not_selected": true,
+      "zero_empirical_variance_interval_does_not_establish_absence_of_unseen_failures": true
+    },
+    {
+      "method": "clip_common_fixedXYZ",
+      "strict_success_rate": {
+        "percentile95": [
+          0.9,
+          1.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_source": {
+        "percentile95": [
+          -0.06666666666666667,
+          0.13333333333333333
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_old_geometry": {
+        "percentile95": [
+          -0.1,
+          0.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "repair_rate_among_defined_bootstraps": {
+        "percentile95": [
+          1.0,
+          1.0
+        ],
+        "defined_draws": 8922,
+        "undefined_draws": 1078,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "seed_not_selected": true,
+      "zero_empirical_variance_interval_does_not_establish_absence_of_unseen_failures": true
+    },
+    {
+      "method": "clip_guard_only_fixedXYZ",
+      "strict_success_rate": {
+        "percentile95": [
+          0.9,
+          1.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_source": {
+        "percentile95": [
+          -0.06666666666666667,
+          0.13333333333333333
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_old_geometry": {
+        "percentile95": [
+          -0.1,
+          0.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "repair_rate_among_defined_bootstraps": {
+        "percentile95": [
+          1.0,
+          1.0
+        ],
+        "defined_draws": 8922,
+        "undefined_draws": 1078,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "seed_not_selected": true,
+      "zero_empirical_variance_interval_does_not_establish_absence_of_unseen_failures": true
+    },
+    {
+      "method": "nearest_teacher",
+      "strict_success_rate": {
+        "percentile95": [
+          0.9,
+          1.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_source": {
+        "percentile95": [
+          0.0,
+          0.1
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_old_geometry": {
+        "percentile95": [
+          -0.1,
+          0.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "repair_rate_among_defined_bootstraps": {
+        "percentile95": [
+          0.0,
+          1.0
+        ],
+        "defined_draws": 8922,
+        "undefined_draws": 1078,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "seed_not_selected": true,
+      "zero_empirical_variance_interval_does_not_establish_absence_of_unseen_failures": true
+    },
+    {
+      "method": "fixedXYZ__old_weight_multistart",
+      "strict_success_rate": {
+        "percentile95": [
+          1.0,
+          1.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_source": {
+        "percentile95": [
+          0.0,
+          0.16666666666666666
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_old_geometry": {
+        "percentile95": [
+          0.0,
+          0.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "repair_rate_among_defined_bootstraps": {
+        "percentile95": [
+          1.0,
+          1.0
+        ],
+        "defined_draws": 8922,
+        "undefined_draws": 1078,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "seed_not_selected": true,
+      "zero_empirical_variance_interval_does_not_establish_absence_of_unseen_failures": true
+    },
+    {
+      "method": "fixedXYZ__position_priority_multistart",
+      "strict_success_rate": {
+        "percentile95": [
+          1.0,
+          1.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_source": {
+        "percentile95": [
+          0.0,
+          0.16666666666666666
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_old_geometry": {
+        "percentile95": [
+          0.0,
+          0.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "repair_rate_among_defined_bootstraps": {
+        "percentile95": [
+          1.0,
+          1.0
+        ],
+        "defined_draws": 8922,
+        "undefined_draws": 1078,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "seed_not_selected": true,
+      "zero_empirical_variance_interval_does_not_establish_absence_of_unseen_failures": true
+    },
+    {
+      "method": "fixedXYZ__free_orientation_multistart",
+      "strict_success_rate": {
+        "percentile95": [
+          0.9,
+          1.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_source": {
+        "percentile95": [
+          -0.06666666666666667,
+          0.13333333333333333
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_old_geometry": {
+        "percentile95": [
+          -0.1,
+          0.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "repair_rate_among_defined_bootstraps": {
+        "percentile95": [
+          1.0,
+          1.0
+        ],
+        "defined_draws": 8922,
+        "undefined_draws": 1078,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "seed_not_selected": true,
+      "zero_empirical_variance_interval_does_not_establish_absence_of_unseen_failures": true
+    },
+    {
+      "method": "nn_seed0",
+      "strict_success_rate": {
+        "percentile95": [
+          0.9,
+          1.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_source": {
+        "percentile95": [
+          0.0,
+          0.1
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_old_geometry": {
+        "percentile95": [
+          -0.1,
+          0.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "repair_rate_among_defined_bootstraps": {
+        "percentile95": [
+          0.0,
+          1.0
+        ],
+        "defined_draws": 8922,
+        "undefined_draws": 1078,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "seed_not_selected": true,
+      "zero_empirical_variance_interval_does_not_establish_absence_of_unseen_failures": true
+    },
+    {
+      "method": "nn_seed1",
+      "strict_success_rate": {
+        "percentile95": [
+          0.9,
+          1.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_source": {
+        "percentile95": [
+          0.0,
+          0.1
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_old_geometry": {
+        "percentile95": [
+          -0.1,
+          0.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "repair_rate_among_defined_bootstraps": {
+        "percentile95": [
+          0.0,
+          1.0
+        ],
+        "defined_draws": 8922,
+        "undefined_draws": 1078,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "seed_not_selected": true,
+      "zero_empirical_variance_interval_does_not_establish_absence_of_unseen_failures": true
+    },
+    {
+      "method": "nn_seed2",
+      "strict_success_rate": {
+        "percentile95": [
+          0.9,
+          1.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_source": {
+        "percentile95": [
+          0.0,
+          0.1
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "paired_rate_difference_vs_old_geometry": {
+        "percentile95": [
+          -0.1,
+          0.0
+        ],
+        "defined_draws": 10000,
+        "undefined_draws": 0,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "repair_rate_among_defined_bootstraps": {
+        "percentile95": [
+          0.0,
+          1.0
+        ],
+        "defined_draws": 8922,
+        "undefined_draws": 1078,
+        "descriptive_source_bootstrap_not_population_failure_bound": true
+      },
+      "seed_not_selected": true,
+      "zero_empirical_variance_interval_does_not_establish_absence_of_unseen_failures": true
+    }
+  ],
+  "seeds_not_pooled_as_independent_sources": true,
+  "descriptive_fixed_test_sample_only": true
+}
