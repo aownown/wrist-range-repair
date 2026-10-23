@@ -1,0 +1,177 @@
+[
+  {
+    "source_file": "can_declared_membership_v538.csv",
+    "sha256": "010aec66be999009f34abe7218d0bd0567dd005186fb9df64147866e1c127ff3",
+    "bytes": 525783
+  },
+  {
+    "source_file": "can_two_clock_components_v538.csv",
+    "sha256": "6fe8a04cd3aa2d7445a69d9e96be87b9f83d3ef858263a327ec993ccc63e485f",
+    "bytes": 1420
+  },
+  {
+    "source_file": "cost_per_condition_medians_ms.csv",
+    "sha256": "6e4800e9e5ac12ece46369bded05915a607a2df546c556155a43b02dca293129",
+    "bytes": 84069
+  },
+  {
+    "source_file": "figure3_methods.csv",
+    "sha256": "578fb1937c87f1048325b01d411b4d1d9657b9d066fa6026c95453a3b414e384",
+    "bytes": 623
+  },
+  {
+    "source_file": "figure3_source_differences.csv",
+    "sha256": "bbc6db85b20019b0432dacac372d8d4cc81351d84f2198a76177d609163cefef",
+    "bytes": 461
+  },
+  {
+    "source_file": "teacher_expansion_contexts.csv",
+    "sha256": "54dca149e60ff75a39f42a90fe7f0a94977a6c4c69d549f25d3aa47aa32836e3",
+    "bytes": 3180
+  },
+  {
+    "source_file": "figure3_effect_summary.json",
+    "sha256": "881b9f34a6d00f50da406452b19b3ed2bc0159c365c4c64a322305d1bffaed72",
+    "bytes": 691
+  },
+  {
+    "source_file": "lift_method_summary.json",
+    "sha256": "05943c3c28c5722c55468603ef7073b0ed02afa794be34119abd6c750d7b9e6c",
+    "bytes": 7650
+  },
+  {
+    "source_file": "lift_source_group_bootstrap.json",
+    "sha256": "3980e451df037101d50176685c98c68f4a5db87a92bfb8e890068b99af72cc82",
+    "bytes": 12360
+  },
+  {
+    "source_file": "teacher_expansion_flow.json",
+    "sha256": "640e0d524e8a111ded8b29d67fbf018c7ba2c1a68dcb15655ff5bdbee0bc2970",
+    "bytes": 1288
+  },
+  {
+    "source_file": "all300_scored_cells.json",
+    "sha256": "5b6a3d4fe84f0f702eedb1726f0929f279bfd9f293fc6410919078e2fee21e7d",
+    "bytes": 3290495
+  },
+  {
+    "source_file": "can_final_protocol_v366.json",
+    "sha256": "cef452cf3f868686267ec5447b4d33c86158b7da15198370c60687b2f70a5fa0",
+    "bytes": 16722
+  },
+  {
+    "source_file": "protocol.json",
+    "sha256": "1b31714fe532f91ebf99c3b9057b674e1a0d030e560fa50dc343a4867967227e",
+    "bytes": 4306
+  },
+  {
+    "source_file": "three_task_protocol.json",
+    "sha256": "b34667703be20ae4046bc36c37b8cfffca381ea18cdb32cb5a3ba1c241272ecd",
+    "bytes": 5918
+  },
+  {
+    "source_file": "complete_local_check_v271.json",
+    "sha256": "8774352c001ffd5df71cf8ebce6bcfcfe4e991028dc49eb497c2d22fd6f8aa32",
+    "bytes": 23575
+  },
+  {
+    "source_file": "receipt.json",
+    "sha256": "7e86e39031336d9d3c652becd94dc93f2f0fec05e753039d0d305eed0bb17ddf",
+    "bytes": 57668
+  },
+  {
+    "source_file": "receipt.json",
+    "sha256": "3559e22f98bef69888acec290c2edcf37795a8ddbbb942b85c26b18c21f1aac7",
+    "bytes": 201569
+  },
+  {
+    "source_file": "receipt.json",
+    "sha256": "5394e43c098253b7ca67154d035730462793d46ffea57b1cfe14bf44f42f894f",
+    "bytes": 99111
+  },
+  {
+    "source_file": "complete_common_step_selection.json",
+    "sha256": "f0df4f711436d9303eab9cec358b867504b6a23b06865a847e98c219facac015",
+    "bytes": 4815
+  },
+  {
+    "source_file": "common_family_freeze.json",
+    "sha256": "0e84d7aadc29279839c50dff4739e19da018bdb401de434c792d22c002968452",
+    "bytes": 42293
+  },
+  {
+    "source_file": "public_arm_loop_source_runtime_v1.py",
+    "sha256": "89ae07c79a8e111ab3a3a95c25e19880d60808c8e354f1acd74e6d45c2f0416c",
+    "bytes": 3935
+  },
+  {
+    "source_file": "public_nominal_joint_limit_filter_drive_v1.py",
+    "sha256": "d57710247ce7ed0b5c0784aba01a301edab761df82116c2095e180138cbfada6",
+    "bytes": 1557
+  },
+  {
+    "source_file": "public_geometry_controller_guard_contract_v1.py",
+    "sha256": "22d344130a86bc602a42228b2ff02f536ed66deeda4e1c8e330e2a640784c1e8",
+    "bytes": 2071
+  },
+  {
+    "source_file": "public_arm_editor_representation_v1.py",
+    "sha256": "630ecdaa946eb79b690b1e89d6210032d17d9fd7c3331e65ee4bdbef2fafda2f",
+    "bytes": 5262
+  },
+  {
+    "source_file": "public_arm_source_capability_editor_v1.py",
+    "sha256": "d22232e4c7da70d4bcffd164bfe48f88022a5cf0c952ce9e673ff057eac5c97b",
+    "bytes": 5619
+  },
+  {
+    "source_file": "public_arm_editor_materialization_v1.py",
+    "sha256": "63e662928ad6022f840656eb676e32505e6f2a26e8501ad1f9e64e91b21559b7",
+    "bytes": 1030
+  },
+  {
+    "source_file": "public_arm_gate_composed_fit_core_v1.py",
+    "sha256": "e9e8b50c05b812e30ded5def427a50b3b1c7f40bc0a3a37e338c0bc12c6904ea",
+    "bytes": 5500
+  },
+  {
+    "source_file": "public_arm_gate_composed_training_v1.py",
+    "sha256": "a7afa9c0aa4ea1db4b6ce2a74197cff1b7f0d509380bb4a4882e5b8cec36bb36",
+    "bytes": 1932
+  },
+  {
+    "source_file": "public_arm_position_priority_ik_v1.py",
+    "sha256": "a8de1de09cb11d9ae5d6e3fa4aaab84516abb1b28155796917c56f89c88080db",
+    "bytes": 5847
+  },
+  {
+    "source_file": "public_sequential_ik_projection_v1.py",
+    "sha256": "17a9a1771e22c5f8e0b8992dbcf0910f864cf89e777e28d56c7d24608389b11a",
+    "bytes": 5744
+  },
+  {
+    "source_file": "public_can_wrist_generation_v1.py",
+    "sha256": "9a21fc79c0b85ef581e63eb0a451e74ed113cc4cc4331b69a4f73f5dc834dde4",
+    "bytes": 3030
+  },
+  {
+    "source_file": "public_can_wrist_retrieval_v1.py",
+    "sha256": "0c2146e354cd71b559adb6ec82074a76853ce33f018c70dc93fbbf3c43ebddff",
+    "bytes": 3182
+  },
+  {
+    "source_file": "public_fixed_xyz_clip_fk_v1.py",
+    "sha256": "b675a7f7ffab2b34a7e321e8f0e8d52d3d8df68d30912525c0973aab05b5683f",
+    "bytes": 2355
+  },
+  {
+    "source_file": "public_xyz_prospective_source_execution_metrics_v1.py",
+    "sha256": "a1876c32de0d824b634f90f68bf9be71b254694a3f386e1ffdd3518b075726b7",
+    "bytes": 3548
+  },
+  {
+    "source_file": "public_can_wrist_explicit_token_ablation_v219.py",
+    "sha256": "35eac2b5748e0efaef4ee11732c1fcddf3967a9b0206e44d1dc7f3c7c2182416",
+    "bytes": 1309
+  }
+]

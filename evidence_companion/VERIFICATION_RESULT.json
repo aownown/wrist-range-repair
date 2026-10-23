@@ -1,0 +1,900 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "Can 840 unique declared cells; 700 scored and 140 NA",
+      "passed": true
+    },
+    {
+      "check": "Can ten scored source groups",
+      "passed": true
+    },
+    {
+      "check": "Can strict equals original G AND C AND R",
+      "passed": true
+    },
+    {
+      "check": "Can source original12 and plus40 18",
+      "passed": true
+    },
+    {
+      "check": "Can stored source-clock pairings",
+      "passed": true
+    },
+    {
+      "check": "Can cost covers every scored condition-method exactly",
+      "passed": true
+    },
+    {
+      "check": "source_copy scored/NA membership",
+      "passed": true
+    },
+    {
+      "check": "source_copy original totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "source_copy plus40 totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "source_copy original G",
+      "passed": true
+    },
+    {
+      "check": "source_copy original C",
+      "passed": true
+    },
+    {
+      "check": "source_copy original R",
+      "passed": true
+    },
+    {
+      "check": "source_copy plot/table agreement",
+      "passed": true
+    },
+    {
+      "check": "clip_common_fixedXYZ scored/NA membership",
+      "passed": true
+    },
+    {
+      "check": "clip_common_fixedXYZ original totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "clip_common_fixedXYZ plus40 totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "clip_common_fixedXYZ original G",
+      "passed": true
+    },
+    {
+      "check": "clip_common_fixedXYZ original C",
+      "passed": true
+    },
+    {
+      "check": "clip_common_fixedXYZ original R",
+      "passed": true
+    },
+    {
+      "check": "clip_common_fixedXYZ plot/table agreement",
+      "passed": true
+    },
+    {
+      "check": "clip_guard_only_fixedXYZ scored/NA membership",
+      "passed": true
+    },
+    {
+      "check": "clip_guard_only_fixedXYZ original totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "clip_guard_only_fixedXYZ plus40 totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "clip_guard_only_fixedXYZ original G",
+      "passed": true
+    },
+    {
+      "check": "clip_guard_only_fixedXYZ original C",
+      "passed": true
+    },
+    {
+      "check": "clip_guard_only_fixedXYZ original R",
+      "passed": true
+    },
+    {
+      "check": "clip_guard_only_fixedXYZ plot/table agreement",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher scored/NA membership",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher original totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher plus40 totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher original G",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher original C",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher original R",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher plot/table agreement",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher59_data_matched scored/NA membership",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher59_data_matched original totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher59_data_matched plus40 totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher59_data_matched original G",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher59_data_matched original C",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher59_data_matched original R",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher59_data_matched plot/table agreement",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__old_weight_multistart scored/NA membership",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__old_weight_multistart original totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__old_weight_multistart plus40 totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__old_weight_multistart original G",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__old_weight_multistart original C",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__old_weight_multistart original R",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__old_weight_multistart plot/table agreement",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__position_priority_multistart scored/NA membership",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__position_priority_multistart original totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__position_priority_multistart plus40 totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__position_priority_multistart original G",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__position_priority_multistart original C",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__position_priority_multistart original R",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__position_priority_multistart plot/table agreement",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__free_orientation_multistart scored/NA membership",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__free_orientation_multistart original totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__free_orientation_multistart plus40 totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__free_orientation_multistart original G",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__free_orientation_multistart original C",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__free_orientation_multistart original R",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__free_orientation_multistart plot/table agreement",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed0_step05000 scored/NA membership",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed0_step05000 original totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed0_step05000 plus40 totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed0_step05000 original G",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed0_step05000 original C",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed0_step05000 original R",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed0_step05000 plot/table agreement",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed1_step05000 scored/NA membership",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed1_step05000 original totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed1_step05000 plus40 totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed1_step05000 original G",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed1_step05000 original C",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed1_step05000 original R",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed1_step05000 plot/table agreement",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed2_step05000 scored/NA membership",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed2_step05000 original totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed2_step05000 plus40 totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed2_step05000 original G",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed2_step05000 original C",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed2_step05000 original R",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_full_seed2_step05000 plot/table agreement",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed0_step05000 scored/NA membership",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed0_step05000 original totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed0_step05000 plus40 totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed0_step05000 original G",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed0_step05000 original C",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed0_step05000 original R",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed0_step05000 plot/table agreement",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed1_step05000 scored/NA membership",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed1_step05000 original totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed1_step05000 plus40 totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed1_step05000 original G",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed1_step05000 original C",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed1_step05000 original R",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed1_step05000 plot/table agreement",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed2_step05000 scored/NA membership",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed2_step05000 original totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed2_step05000 plus40 totals/repair/regression",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed2_step05000 original G",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed2_step05000 original C",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed2_step05000 original R",
+      "passed": true
+    },
+    {
+      "check": "nn_expanded_constant_seed2_step05000 plot/table agreement",
+      "passed": true
+    },
+    {
+      "check": "can__demo_79__current_guard Full-Constant paired difference",
+      "passed": true
+    },
+    {
+      "check": "can__demo_110__current_guard Full-Constant paired difference",
+      "passed": true
+    },
+    {
+      "check": "can__demo_119__current_guard Full-Constant paired difference",
+      "passed": true
+    },
+    {
+      "check": "can__demo_120__current_guard Full-Constant paired difference",
+      "passed": true
+    },
+    {
+      "check": "can__demo_126__current_guard Full-Constant paired difference",
+      "passed": true
+    },
+    {
+      "check": "can__demo_147__current_guard Full-Constant paired difference",
+      "passed": true
+    },
+    {
+      "check": "can__demo_148__current_guard Full-Constant paired difference",
+      "passed": true
+    },
+    {
+      "check": "can__demo_162__current_guard Full-Constant paired difference",
+      "passed": true
+    },
+    {
+      "check": "can__demo_171__current_guard Full-Constant paired difference",
+      "passed": true
+    },
+    {
+      "check": "can__demo_173__current_guard Full-Constant paired difference",
+      "passed": true
+    },
+    {
+      "check": "Can all ten source differences: four positive three negative three zero",
+      "passed": true
+    },
+    {
+      "check": "Can stored effect point estimate only (no resampling)",
+      "passed": true
+    },
+    {
+      "check": "Lift 300 unique cells and ten independent sources",
+      "passed": true
+    },
+    {
+      "check": "Lift both clocks retain exact same strict member set",
+      "passed": true
+    },
+    {
+      "check": "Lift original G/C/R conjunction",
+      "passed": true
+    },
+    {
+      "check": "source_copy Lift original accounting",
+      "passed": true
+    },
+    {
+      "check": "source_copy Lift summary repairs/regressions",
+      "passed": true
+    },
+    {
+      "check": "source_copy Lift extended accounting",
+      "passed": true
+    },
+    {
+      "check": "source_copy Lift warm timing median",
+      "passed": true
+    },
+    {
+      "check": "source_copy Lift stored same-CPU executed pairing",
+      "passed": true
+    },
+    {
+      "check": "clip_common_fixedXYZ Lift original accounting",
+      "passed": true
+    },
+    {
+      "check": "clip_common_fixedXYZ Lift summary repairs/regressions",
+      "passed": true
+    },
+    {
+      "check": "clip_common_fixedXYZ Lift extended accounting",
+      "passed": true
+    },
+    {
+      "check": "clip_common_fixedXYZ Lift warm timing median",
+      "passed": true
+    },
+    {
+      "check": "clip_common_fixedXYZ Lift stored same-CPU executed pairing",
+      "passed": true
+    },
+    {
+      "check": "clip_guard_only_fixedXYZ Lift original accounting",
+      "passed": true
+    },
+    {
+      "check": "clip_guard_only_fixedXYZ Lift summary repairs/regressions",
+      "passed": true
+    },
+    {
+      "check": "clip_guard_only_fixedXYZ Lift extended accounting",
+      "passed": true
+    },
+    {
+      "check": "clip_guard_only_fixedXYZ Lift warm timing median",
+      "passed": true
+    },
+    {
+      "check": "clip_guard_only_fixedXYZ Lift stored same-CPU executed pairing",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher Lift original accounting",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher Lift summary repairs/regressions",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher Lift extended accounting",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher Lift warm timing median",
+      "passed": true
+    },
+    {
+      "check": "nearest_teacher Lift stored same-CPU executed pairing",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__old_weight_multistart Lift original accounting",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__old_weight_multistart Lift summary repairs/regressions",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__old_weight_multistart Lift extended accounting",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__old_weight_multistart Lift warm timing median",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__old_weight_multistart Lift stored same-CPU executed pairing",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__position_priority_multistart Lift original accounting",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__position_priority_multistart Lift summary repairs/regressions",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__position_priority_multistart Lift extended accounting",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__position_priority_multistart Lift warm timing median",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__position_priority_multistart Lift stored same-CPU executed pairing",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__free_orientation_multistart Lift original accounting",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__free_orientation_multistart Lift summary repairs/regressions",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__free_orientation_multistart Lift extended accounting",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__free_orientation_multistart Lift warm timing median",
+      "passed": true
+    },
+    {
+      "check": "fixedXYZ__free_orientation_multistart Lift stored same-CPU executed pairing",
+      "passed": true
+    },
+    {
+      "check": "nn_seed0 Lift original accounting",
+      "passed": true
+    },
+    {
+      "check": "nn_seed0 Lift summary repairs/regressions",
+      "passed": true
+    },
+    {
+      "check": "nn_seed0 Lift extended accounting",
+      "passed": true
+    },
+    {
+      "check": "nn_seed0 Lift warm timing median",
+      "passed": true
+    },
+    {
+      "check": "nn_seed0 Lift stored same-CPU executed pairing",
+      "passed": true
+    },
+    {
+      "check": "nn_seed1 Lift original accounting",
+      "passed": true
+    },
+    {
+      "check": "nn_seed1 Lift summary repairs/regressions",
+      "passed": true
+    },
+    {
+      "check": "nn_seed1 Lift extended accounting",
+      "passed": true
+    },
+    {
+      "check": "nn_seed1 Lift warm timing median",
+      "passed": true
+    },
+    {
+      "check": "nn_seed1 Lift stored same-CPU executed pairing",
+      "passed": true
+    },
+    {
+      "check": "nn_seed2 Lift original accounting",
+      "passed": true
+    },
+    {
+      "check": "nn_seed2 Lift summary repairs/regressions",
+      "passed": true
+    },
+    {
+      "check": "nn_seed2 Lift extended accounting",
+      "passed": true
+    },
+    {
+      "check": "nn_seed2 Lift warm timing median",
+      "passed": true
+    },
+    {
+      "check": "nn_seed2 Lift stored same-CPU executed pairing",
+      "passed": true
+    },
+    {
+      "check": "Can listed TRAIN/DEV/FINAL source-disjoint",
+      "passed": true
+    },
+    {
+      "check": "Lift listed TRAIN/DEV/FINAL source-disjoint",
+      "passed": true
+    },
+    {
+      "check": "Can_original36 retained teacher mix",
+      "passed": true
+    },
+    {
+      "check": "Can_expanded59 retained teacher mix",
+      "passed": true
+    },
+    {
+      "check": "Lift45 retained teacher mix",
+      "passed": true
+    },
+    {
+      "check": "DEV staged selection totals",
+      "passed": true
+    },
+    {
+      "check": "Three Constant feature vectors are identical 14-D",
+      "passed": true
+    },
+    {
+      "check": "file bytes README.md",
+      "passed": true
+    },
+    {
+      "check": "file bytes SOURCE_HASHES.json",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/PIPELINE_PSEUDOCODE.md",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/fixed_control_v538/public_geometry_controller_guard_contract_v1.py.txt",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/fixed_control_v538/public_nominal_joint_limit_filter_drive_v1.py.txt",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/listing_manifest.json",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/public_arm_editor_materialization_v1.py.txt",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/public_arm_editor_representation_v1.py.txt",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/public_arm_gate_composed_fit_core_v1.py.txt",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/public_arm_gate_composed_training_v1.py.txt",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/public_arm_loop_source_runtime_v1.py.txt",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/public_arm_position_priority_ik_v1.py.txt",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/public_arm_source_capability_editor_v1.py.txt",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/public_can_wrist_explicit_token_ablation_v219.py.txt",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/public_can_wrist_generation_v1.py.txt",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/public_can_wrist_retrieval_v1.py.txt",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/public_fixed_xyz_clip_fk_v1.py.txt",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/public_sequential_ik_projection_v1.py.txt",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/public_xyz_prospective_source_execution_metrics_v1.py.txt",
+      "passed": true
+    },
+    {
+      "check": "file bytes protocols/Can_expanded59_teacher_membership.csv",
+      "passed": true
+    },
+    {
+      "check": "file bytes protocols/Can_original36_teacher_membership.csv",
+      "passed": true
+    },
+    {
+      "check": "file bytes protocols/Lift45_teacher_membership.csv",
+      "passed": true
+    },
+    {
+      "check": "file bytes protocols/can_DEV_family_update_candidates.csv",
+      "passed": true
+    },
+    {
+      "check": "file bytes protocols/can_DEV_selection_rule.json",
+      "passed": true
+    },
+    {
+      "check": "file bytes protocols/can_dev_exclusions.json",
+      "passed": true
+    },
+    {
+      "check": "file bytes protocols/can_final_protocol_extract.json",
+      "passed": true
+    },
+    {
+      "check": "file bytes protocols/lift_task_protocol_extract.json",
+      "passed": true
+    },
+    {
+      "check": "file bytes protocols/lift_train_exclusions.json",
+      "passed": true
+    },
+    {
+      "check": "file bytes protocols/selected_models_and_constant.json",
+      "passed": true
+    },
+    {
+      "check": "file bytes protocols/source_roles.csv",
+      "passed": true
+    },
+    {
+      "check": "file bytes results/can_all840_membership.csv",
+      "passed": true
+    },
+    {
+      "check": "file bytes results/can_condition_cost_ms.csv",
+      "passed": true
+    },
+    {
+      "check": "file bytes results/can_original_summary.csv",
+      "passed": true
+    },
+    {
+      "check": "file bytes results/can_source_differences.csv",
+      "passed": true
+    },
+    {
+      "check": "file bytes results/can_teacher_expansion_contexts.csv",
+      "passed": true
+    },
+    {
+      "check": "file bytes results/can_two_clock_components.csv",
+      "passed": true
+    },
+    {
+      "check": "file bytes results/figure3_effect_summary.json",
+      "passed": true
+    },
+    {
+      "check": "file bytes results/lift_all300_cells.csv",
+      "passed": true
+    },
+    {
+      "check": "file bytes results/lift_failure_joints_and_pairing.json",
+      "passed": true
+    },
+    {
+      "check": "file bytes results/lift_method_summary.json",
+      "passed": true
+    },
+    {
+      "check": "file bytes results/lift_source_group_bootstrap.json",
+      "passed": true
+    },
+    {
+      "check": "file bytes results/teacher_expansion_flow.json",
+      "passed": true
+    },
+    {
+      "check": "file bytes verify_tables.py",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/README.md",
+      "passed": true
+    },
+    {
+      "check": "file bytes results/README.md",
+      "passed": true
+    },
+    {
+      "check": "file bytes protocols/README.md",
+      "passed": true
+    },
+    {
+      "check": "file bytes methods/fixed_control_v538/README.md",
+      "passed": true
+    }
+  ],
+  "check_count": 223,
+  "scope": "Stored-table aggregation and local included-file checks only; no bootstrap, numerical model forward, FK, simulator or external artifact hash verification.",
+  "scientific_results_changed": false
+}
