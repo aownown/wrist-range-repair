@@ -1,0 +1,27 @@
+"""D2F ordinary control ablations, not learned repair or a safety certificate."""
+import numpy as np
+VARIANTS={
+    'arm_only':dict(arm_margin_rad=.02,open_inset_m=.0002,closed_inset_m=.0002),
+    'arm_open2':dict(arm_margin_rad=.02,open_inset_m=.002,closed_inset_m=.0002),
+    'arm_both2':dict(arm_margin_rad=.02,open_inset_m=.002,closed_inset_m=.002),
+}
+CAPABILITIES=('broad_native','wrist_rom_085','aperture_044','motor_force_04')
+METHODS=('source_pose_raw','source_pose_support_shift')
+
+
+def normalized_gripper_guard(raw,ranges,variant_id):
+    """Bound returned targets only; preserve the native internal motor ramp."""
+    if variant_id not in VARIANTS:raise ValueError('Undeclared guard variant')
+    x=np.asarray(raw,dtype=float);limits=np.asarray(ranges,dtype=float)
+    if x.shape!=(2,) or limits.shape!=(2,2) or not np.isfinite(x).all() or not np.isfinite(limits).all() or np.any(limits[:,0]>=limits[:,1]) or np.any(np.abs(x)>1.+1e-12):raise ValueError('Finite normalized two-finger targets/ranges required')
+    spec=VARIANTS[variant_id];half=(limits[:,1]-limits[:,0])/2.;op=spec['open_inset_m'];cl=spec['closed_inset_m']
+    if np.any(op+cl>=2.*half):raise ValueError('Nonempty motor target interval required')
+    lower=-np.ones(2)+np.array([cl,op])/half;upper=np.ones(2)-np.array([op,cl])/half
+    return np.minimum(np.maximum(x,lower),upper)
+
+
+def validate_jobs(jobs):
+    expected={(c,m,v) for c in CAPABILITIES for m in METHODS for v in VARIANTS}
+    if len(jobs)!=24 or len({j['job_id'] for j in jobs})!=24 or {(j['capability_id'],j['method'],j['variant_id']) for j in jobs}!=expected:raise ValueError('All4 capabilities x2 source mappings x3 ordinary variants required')
+    if any(j['task']!='mug_cleanup' or j['episode_id']!='demo_0' or j['asset_id']!='b4ae56d6' or j['policy_actions']!=752 or j['guard_config']!=VARIANTS[j['variant_id']] for j in jobs):raise ValueError('Original fixed TRAIN source/geometry/clock or guard grid differs')
+    return dict(jobs=24,physical_steps=24*752*25,source_groups=1,geometry_count=1,generalization_claim=False)

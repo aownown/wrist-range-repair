@@ -1,0 +1,26 @@
+"""Preserve native OSC computation/cleanup, then filter only actual seven-arm torque."""
+import numpy as np
+from public_nominal_joint_limit_filter_v1 import project_nominal_torque
+from execute_public_joint_tracking_v1 import Recorder
+
+class NominalJointLimitFilterDrive:
+    def __init__(self,controller,joint_bounds,*,margin):
+        self.controller=controller;self.joint_bounds=np.array(joint_bounds,float,copy=True);self.margin=margin;self.original_run=controller.run_controller;self.last_record=None
+    def run_controller(self):
+        c=self.controller;nominal=np.array(self.original_run(),copy=True)
+        if c.new_update is not True:raise ValueError('Native OSC must invalidate caches every substep')
+        raw,record=project_nominal_torque(c.mass_matrix,c.torque_compensation,c.joint_pos,c.joint_vel,self.joint_bounds,np.c_[c.actuator_min,c.actuator_max],nominal,margin=self.margin)
+        c.torques=raw.copy();self.last_record=record
+        return raw
+
+class NominalFilterRecorder(Recorder):
+    def __init__(self,budget):super().__init__(budget);self.drive=None
+    def controller_wrapper(self,controller):
+        base=super().controller_wrapper(controller)
+        def call(*a,**k):
+            torque=base(*a,**k)
+            if self.recording:
+                if self.drive is None or self.drive.last_record is None:raise ValueError('Missing actual filter provenance')
+                self.control[-1].update({'filter_'+k:np.array(v,copy=True) for k,v in self.drive.last_record.items()})
+            return torque
+        return call
